@@ -1,0 +1,65 @@
+<section id="medicina" class="py-32 bg-surface-container-low">
+  <div class="max-w-screen-2xl mx-auto px-8">
+
+    <!-- Header -->
+    <div class="text-center mb-20">
+      <h2 class="text-5xl font-bold text-on-surface mb-6">Medicina &amp; Atención Experta</h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">
+        Tecnología de punta y calidez humana para un diagnóstico integral.
+      </p>
+    </div>
+
+    <!-- Card grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Consultas especializadas -->
+      <div class="md:col-span-2 bg-surface-container-lowest p-12 rounded-[2rem] flex flex-col justify-between">
+        <div>
+          <span class="material-symbols-outlined text-secondary text-5xl mb-6 block">medical_services</span>
+          <h3 class="text-3xl font-bold mb-4">Consultas Especializadas</h3>
+          <p class="text-on-surface-variant text-lg leading-relaxed max-w-xl">
+            Desde chequeos generales hasta especialidades avanzadas, nuestro equipo médico está aquí
+            para escucharte y guiarte.
+          </p>
+        </div>
+        <div class="mt-12 flex flex-wrap items-center gap-4">
+          @for (s of specialties; track s) {
+            <span class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold">
+              {{ s }}
+            </span>
+          }
+        </div>
+      </div>
+
+      <!-- Laboratorio -->
+      <div class="bg-secondary text-on-secondary p-12 rounded-[2rem] flex flex-col justify-center">
+        <span class="material-symbols-outlined text-6xl mb-6">biotech</span>
+        <h3 class="text-2xl font-bold mb-4">Laboratorio In-House</h3>
+        <p class="opacity-80 text-sm leading-relaxed mb-8">
+          Resultados rápidos y precisos con la última tecnología en diagnóstico clínico.
+        </p>
+        <button class="text-on-secondary flex items-center gap-2 font-bold group">
+          Agendar Prueba
+          <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+        </button>
+      </div>
+
+      <!-- Entorno de confianza -->
+      <div class="bg-surface-container-lowest p-12 rounded-[2rem] md:col-span-3 flex flex-col md:flex-row gap-12 items-center">
+        <img
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjA3RhA1QOzAT0gE6jk-Sy682PoDN4g9tVf1CL6ElTvEYY7wiCLBUjHtVekoLlpEVIjiMe2wRfCHtERD-WPijWT-WyNQGuEwvfuCvODubIPeci0b7iVLbfZ3fA3xp177EabMMufBqpNIX5riy82KO1_82dSO5oEn6GzmL79Wg1ZaOV3ije1llU6yEXwUPIEjFZg0mT6ZkSGQ8mAMMo01QtbnqDWoZgLnC_QZQOsvc9OxjA6-QjlBzc74XtcbJ0vF7MpN1pwa86X4M"
+          alt="Sala de consulta"
+          class="w-full md:w-1/3 h-64 object-cover rounded-2xl">
+        <div class="flex-1">
+          <h3 class="text-2xl font-bold mb-4">Un Entorno de Confianza</h3>
+          <p class="text-on-surface-variant leading-relaxed">
+            Nuestras instalaciones han sido diseñadas para eliminar la ansiedad clínica, utilizando
+            principios de diseño biofílico que favorecen la recuperación del paciente desde el primer
+            momento.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

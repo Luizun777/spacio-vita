@@ -1,0 +1,34 @@
+<nav class="fixed top-0 w-full z-50 bg-[#FBFBE2]/80 backdrop-blur-md shadow-[0_20px_40px_rgba(27,29,14,0.05)]">
+  <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto w-full">
+
+    <!-- Brand -->
+    <div class="font-headline text-2xl font-bold text-[#3E5219] tracking-tighter cursor-pointer">
+      Centro de Bienestar Integral
+    </div>
+
+    <!-- Desktop links -->
+    <div class="hidden md:flex items-center gap-10">
+      @for (section of sections; track section.id) {
+        <a
+          class="font-headline text-lg tracking-tight transition-all cursor-pointer hover:text-[#3E5219]"
+          [class.font-bold]="activeSection() === section.id"
+          [class.border-b-2]="activeSection() === section.id"
+          [class.border-[#3E5219]]="activeSection() === section.id"
+          [class.pb-1]="activeSection() === section.id"
+          [class.text-[#3E5219]]="activeSection() === section.id"
+          [class.text-[#556B2F]]="activeSection() !== section.id"
+          [class.font-medium]="activeSection() !== section.id"
+          (click)="scrollTo(section.id)">
+          {{ section.label }}
+        </a>
+      }
+    </div>
+
+    <!-- CTA -->
+    <button
+      class="bg-[#556B2F] text-white px-6 py-2 rounded-full font-medium hover:opacity-90 active:scale-95 duration-200 transition-all"
+      (click)="scrollTo('contacto')">
+      Reservar
+    </button>
+  </div>
+</nav>

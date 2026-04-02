@@ -1,0 +1,31 @@
+import { Component, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+interface NavItem {
+  id: string;
+  icon: string;
+  label: string;
+}
+
+@Component({
+  selector: 'app-mobile-nav',
+  imports: [CommonModule],
+  templateUrl: './mobile-nav.html',
+  styleUrl: './mobile-nav.scss',
+})
+export class MobileNavComponent {
+  activeItem = signal<string>('nutricion');
+
+  items: NavItem[] = [
+    { id: 'nutricion', icon: 'nutrition',         label: 'Nutrición' },
+    { id: 'medicina',  icon: 'medical_services',  label: 'Medicina'  },
+    { id: 'spa',       icon: 'spa',               label: 'Spa'       },
+    { id: 'contacto',  icon: 'mail',              label: 'Contacto'  },
+  ];
+
+  scrollTo(id: string): void {
+    this.activeItem.set(id);
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }
+}

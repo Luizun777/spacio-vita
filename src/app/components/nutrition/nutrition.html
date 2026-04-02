@@ -1,0 +1,39 @@
+<section id="nutricion" class="py-32 bg-surface">
+  <div class="max-w-screen-2xl mx-auto px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+
+      <!-- Image column -->
+      <div class="lg:col-span-5 order-2 lg:order-1">
+        <div class="relative">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0vzZ4yTVCA2NfG_LNdIXe_GznzH_1tIKv5gTHzbuP36iSKyivQNosPnWsEld8QDN6i4dAlGFHJJvapLz3hoMLqkcIwdvCf71KpbiGX-l3qCgG_ePA2-TTg7IBbWg9dNEseOU3OFwZChg5lsPi5b4W9Imz0GK58fwof5GFruSuyFGLu4E-eP5jj2pzcN3aZF9ZVsvfOHq6-rEExtkiB73nOEKmLbzNZ37UFbjuwIZxk6gB81KrR2QE7uA-uhJumupunoOyB1FCWpM"
+            alt="Nutrición saludable"
+            class="rounded-3xl shadow-2xl w-full">
+          <div class="absolute -bottom-10 -right-10 bg-surface-container-lowest p-8 rounded-2xl shadow-xl max-w-xs hidden md:block">
+            <p class="italic font-headline text-lg text-primary">"La comida es medicina para el alma."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text column -->
+      <div class="lg:col-span-7 order-1 lg:order-2">
+        <h2 class="text-5xl font-bold mb-8 text-on-surface">Nutrición: Nutre tu potencial</h2>
+        <p class="text-lg text-on-surface-variant mb-10 leading-relaxed max-w-2xl">
+          No creemos en dietas restrictivas, sino en planes de alimentación vibrantes y personalizados
+          que se adaptan a tu estilo de vida. Nuestros expertos diseñan rutas nutricionales basadas
+          en ciencia para optimizar tu energía.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          @for (card of cards; track card.title) {
+            <div class="bg-surface-container-low p-8 rounded-2xl">
+              <span class="material-symbols-outlined text-primary text-4xl mb-4 block">{{ card.icon }}</span>
+              <h3 class="text-xl font-bold mb-2">{{ card.title }}</h3>
+              <p class="text-on-surface-variant text-sm">{{ card.description }}</p>
+            </div>
+          }
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
