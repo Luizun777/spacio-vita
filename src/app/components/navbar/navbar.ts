@@ -8,14 +8,14 @@ import { CommonModule } from '@angular/common';
   styleUrl: './navbar.scss',
 })
 export class NavbarComponent {
-  activeSection = signal<string>('nutricion');
+  activeSection = signal<string>('medicina');
 
   sections = [
-    { id: 'nutricion', label: 'Nutrición' },
-    { id: 'medicina',  label: 'Medicina'  },
-    { id: 'spa',       label: 'Spa & Estética' },
-    { id: 'precios',   label: 'Precios'   },
-    { id: 'contacto',  label: 'Contacto'  },
+    { id: 'medicina',   label: 'Medicina'  },
+    { id: 'spa',        label: 'Spa & Estética' },
+    { id: 'servicios',  label: 'Servicios' },
+    { id: 'precios',    label: 'Precios'   },
+    { id: 'contacto',   label: 'Contacto'  },
   ];
 
   scrollTo(id: string): void {
