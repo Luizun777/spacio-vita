@@ -19,13 +19,23 @@ export class ContactComponent {
   form: ContactForm = {
     nombre: '',
     email: '',
-    servicio: 'Nutrición',
+    servicio: 'Consulta médica general',
     mensaje: '',
   };
 
   submitted = false;
 
-  servicios = ['Nutrición', 'Consulta Médica', 'Spa & Masajes', 'Check-up General'];
+  servicios = [
+    'Consulta médica general',
+    'Consulta bariátrica',
+    'Masajes',
+    'Tratamientos faciales',
+    'Tratamientos corporales',
+    'Depilación láser',
+    'Tratamientos específicos',
+    'Sueroterapia revitalizante',
+    'Psicología / Tanatología',
+  ];
 
   onSubmit(): void {
     this.submitted = true;

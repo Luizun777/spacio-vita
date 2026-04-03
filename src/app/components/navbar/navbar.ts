@@ -13,7 +13,8 @@ export class NavbarComponent {
   sections = [
     { id: 'nutricion', label: 'Nutrición' },
     { id: 'medicina',  label: 'Medicina'  },
-    { id: 'spa',       label: 'Spa & Relajación' },
+    { id: 'spa',       label: 'Spa & Estética' },
+    { id: 'precios',   label: 'Precios'   },
     { id: 'contacto',  label: 'Contacto'  },
   ];
 

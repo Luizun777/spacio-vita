@@ -1,0 +1,67 @@
+<section id="precios" class="py-32 bg-surface-container-low">
+  <div class="max-w-screen-2xl mx-auto px-8">
+
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <span class="text-primary font-bold tracking-widest uppercase text-xs">TARIFAS</span>
+      <h2 class="text-5xl font-bold mt-4 mb-6">Servicios &amp; Precios</h2>
+      <p class="text-on-surface-variant text-lg max-w-2xl mx-auto">
+        Tratamientos personalizados para tu bienestar físico y emocional.
+      </p>
+    </div>
+
+    <!-- Categories grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      @for (category of categories; track category.name) {
+        <div class="bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm">
+
+          <!-- Category header -->
+          <div class="bg-primary-container px-6 py-4">
+            <h3 class="text-on-primary-container font-bold text-lg font-headline">{{ category.name }}</h3>
+          </div>
+
+          <!-- Services list -->
+          <ul class="divide-y divide-surface-variant">
+            @for (service of category.services; track service.name) {
+              <li class="px-6 py-4">
+                <div class="flex items-start justify-between gap-4">
+
+                  <!-- Name + description -->
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center gap-2 flex-wrap">
+                      <span class="font-medium text-on-surface text-sm">{{ service.name }}</span>
+                      @if (service.promo) {
+                        <span class="text-xs bg-primary text-on-primary px-2 py-0.5 rounded-full font-bold shrink-0">
+                          {{ service.promo }}
+                        </span>
+                      }
+                    </div>
+                    @if (service.description) {
+                      <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">{{ service.description }}</p>
+                    }
+                  </div>
+
+                  <!-- Price -->
+                  <div class="text-right shrink-0">
+                    @if (service.price) {
+                      <span class="font-bold text-primary">${{ service.price }}</span>
+                    }
+                    @if (service.original_price) {
+                      <span class="text-xs text-on-surface-variant line-through block">${{ service.original_price }}</span>
+                    }
+                    @if (!service.price) {
+                      <span class="text-xs text-on-surface-variant italic">Consultar</span>
+                    }
+                  </div>
+
+                </div>
+              </li>
+            }
+          </ul>
+
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

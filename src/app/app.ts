@@ -8,6 +8,7 @@ import { TestimonialsComponent } from './components/testimonials/testimonials';
 import { ContactComponent }     from './components/contact/contact';
 import { FooterComponent }      from './components/footer/footer';
 import { MobileNavComponent }   from './components/mobile-nav/mobile-nav';
+import { PreciosComponent }     from './components/precios/precios';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,7 @@ import { MobileNavComponent }   from './components/mobile-nav/mobile-nav';
     ContactComponent,
     FooterComponent,
     MobileNavComponent,
+    PreciosComponent,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',

@@ -16,21 +16,21 @@ export interface Testimonial {
 export class TestimonialsComponent {
   testimonials: Testimonial[] = [
     {
-      quote: 'El Centro de Bienestar Integral cambió mi forma de ver la salud. No solo me siento mejor físicamente, sino que he encontrado paz mental.',
-      name: 'Elena Martínez',
-      role: 'Paciente desde 2022',
+      quote: 'Me hice el paquete Silueta +40 y los resultados fueron increíbles. El personal es muy profesional y el trato excelente.',
+      name: 'Cliente de Google Maps',
+      role: 'Tratamientos Corporales',
       avatarColor: 'bg-primary-fixed',
     },
     {
-      quote: 'Los planes de nutrición son excelentes. Muy fáciles de seguir y realmente personalizados a mis gustos y necesidades médicas.',
-      name: 'Ricardo Sosa',
-      role: 'Paciente de Nutrición',
+      quote: 'La limpieza facial profunda quedé muy contenta, mi piel se veía radiante. Definitivamente regreso por la renovación facial.',
+      name: 'Cliente de Google Maps',
+      role: 'Tratamientos Faciales',
       avatarColor: 'bg-secondary-container',
     },
     {
-      quote: 'El área de spa es de otro mundo. Es mi refugio semanal para liberar el estrés del trabajo. Altamente recomendado.',
-      name: 'Carla Benítez',
-      role: 'Cliente Wellness',
+      quote: 'Excelente atención médica, la consulta general muy completa. El ambiente es muy agradable y el equipo muy amable.',
+      name: 'Cliente de Google Maps',
+      role: 'Consultas Médicas',
       avatarColor: 'bg-primary-fixed',
     },
   ];

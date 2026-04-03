@@ -1,80 +1,124 @@
 <section id="contacto" class="py-32 bg-surface">
-  <div class="max-w-4xl mx-auto px-8">
-    <div class="bg-surface-container-low rounded-[3rem] p-12 md:p-20 relative overflow-hidden">
+  <div class="max-w-screen-xl mx-auto px-8">
 
-      <!-- Header -->
-      <div class="relative z-10 text-center mb-12">
-        <h2 class="text-4xl font-bold mb-4">Contáctanos</h2>
-        <p class="text-on-surface-variant">
-          Estamos aquí para responder tus preguntas y agendar tu primera visita.
-        </p>
+    <!-- Map -->
+    <div class="mb-12 rounded-3xl overflow-hidden shadow-md">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.5!2d-99.1600528!3d19.3627159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff003e63593b%3A0xc4f94b3dee8653f!2sSpacio%20Vita!5e0!3m2!1ses!2smx!4v1"
+        width="100%"
+        height="350"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Ubicación de Spacio Vita">
+      </iframe>
+    </div>
+
+    <!-- Info + Form side by side -->
+    <div class="flex flex-col lg:flex-row gap-8 items-start">
+
+      <!-- Location info -->
+      <div class="lg:w-1/3 bg-surface-container-low rounded-3xl p-10">
+        <h3 class="text-2xl font-bold mb-6">Encuéntranos</h3>
+        <div class="space-y-5 text-sm">
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary shrink-0">location_on</span>
+            <p class="text-on-surface-variant leading-relaxed">Spacio Vita — Ciudad de México</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary shrink-0">directions</span>
+            <a
+              href="https://www.google.com/maps/place/Spacio+Vita/@19.3591769,-99.1574758,15z/data=!4m6!3m5!1s0x85d1ff003e63593b:0xc4f94b3dee8653f!8m2!3d19.3627159!4d-99.1600528!16s%2Fg%2F11wc2yg9ny"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-primary font-semibold hover:underline">
+              Cómo llegar →
+            </a>
+          </div>
+        </div>
       </div>
 
-      <!-- Success message -->
-      @if (submitted) {
-        <div class="relative z-10 text-center py-12">
-          <span class="material-symbols-outlined text-primary text-6xl mb-4 block">check_circle</span>
-          <h3 class="text-2xl font-bold text-primary mb-2">¡Solicitud enviada!</h3>
-          <p class="text-on-surface-variant">Nos pondremos en contacto contigo pronto.</p>
+      <!-- Contact form -->
+      <div class="lg:w-2/3">
+        <div class="bg-surface-container-low rounded-[3rem] p-12 md:p-16 relative overflow-hidden">
+
+          <!-- Header -->
+          <div class="relative z-10 text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4">Contáctanos</h2>
+            <p class="text-on-surface-variant">
+              Estamos aquí para responder tus preguntas y agendar tu primera visita.
+            </p>
+          </div>
+
+          <!-- Success message -->
+          @if (submitted) {
+            <div class="relative z-10 text-center py-12">
+              <span class="material-symbols-outlined text-primary text-6xl mb-4 block">check_circle</span>
+              <h3 class="text-2xl font-bold text-primary mb-2">¡Solicitud enviada!</h3>
+              <p class="text-on-surface-variant">Nos pondremos en contacto contigo pronto.</p>
+            </div>
+          }
+
+          <!-- Form -->
+          @if (!submitted) {
+            <form class="relative z-10 space-y-6" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-semibold mb-2 ml-1">Nombre Completo</label>
+                  <input
+                    class="w-full bg-white/60 border-none rounded-xl focus:ring-2 focus:ring-primary/30 py-4 px-6"
+                    type="text"
+                    placeholder="Ej. Ana García"
+                    [(ngModel)]="form.nombre"
+                    name="nombre"
+                    required>
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold mb-2 ml-1">Correo Electrónico</label>
+                  <input
+                    class="w-full bg-white/60 border-none rounded-xl focus:ring-2 focus:ring-primary/30 py-4 px-6"
+                    type="email"
+                    placeholder="ana@ejemplo.com"
+                    [(ngModel)]="form.email"
+                    name="email"
+                    required>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold mb-2 ml-1">Servicio de Interés</label>
+                <select
+                  class="w-full bg-white/60 border-none rounded-xl focus:ring-2 focus:ring-primary/30 py-4 px-6"
+                  [(ngModel)]="form.servicio"
+                  name="servicio">
+                  @for (s of servicios; track s) {
+                    <option [value]="s">{{ s }}</option>
+                  }
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold mb-2 ml-1">Mensaje</label>
+                <textarea
+                  class="w-full bg-white/60 border-none rounded-xl focus:ring-2 focus:ring-primary/30 py-4 px-6"
+                  rows="4"
+                  placeholder="¿Cómo podemos ayudarte?"
+                  [(ngModel)]="form.mensaje"
+                  name="mensaje">
+                </textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-primary text-on-primary py-5 rounded-full text-lg font-bold hover:opacity-95 transition-all">
+                Enviar Solicitud
+              </button>
+            </form>
+          }
+
         </div>
-      }
-
-      <!-- Form -->
-      @if (!submitted) {
-        <form class="relative z-10 space-y-6" (ngSubmit)="onSubmit()" #contactForm="ngForm">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label class="block text-sm font-semibold mb-2 ml-1">Nombre Completo</label>
-              <input
-                class="w-full bg-white/60 border-none rounded-xl focus:ring-2 focus:ring-primary/30 py-4 px-6"
-                type="text"
-                placeholder="Ej. Ana García"
-                [(ngModel)]="form.nombre"
-                name="nombre"
-                required>
-            </div>
-            <div>
-              <label class="block text-sm font-semibold mb-2 ml-1">Correo Electrónico</label>
-              <input
-                class="w-full bg-white/60 border-none rounded-xl focus:ring-2 focus:ring-primary/30 py-4 px-6"
-                type="email"
-                placeholder="ana@ejemplo.com"
-                [(ngModel)]="form.email"
-                name="email"
-                required>
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-sm font-semibold mb-2 ml-1">Servicio de Interés</label>
-            <select
-              class="w-full bg-white/60 border-none rounded-xl focus:ring-2 focus:ring-primary/30 py-4 px-6"
-              [(ngModel)]="form.servicio"
-              name="servicio">
-              @for (s of servicios; track s) {
-                <option [value]="s">{{ s }}</option>
-              }
-            </select>
-          </div>
-
-          <div>
-            <label class="block text-sm font-semibold mb-2 ml-1">Mensaje</label>
-            <textarea
-              class="w-full bg-white/60 border-none rounded-xl focus:ring-2 focus:ring-primary/30 py-4 px-6"
-              rows="4"
-              placeholder="¿Cómo podemos ayudarte?"
-              [(ngModel)]="form.mensaje"
-              name="mensaje">
-            </textarea>
-          </div>
-
-          <button
-            type="submit"
-            class="w-full bg-primary text-on-primary py-5 rounded-full text-lg font-bold hover:opacity-95 transition-all">
-            Enviar Solicitud
-          </button>
-        </form>
-      }
+      </div>
 
     </div>
   </div>

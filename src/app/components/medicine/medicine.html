@@ -16,10 +16,10 @@
       <div class="md:col-span-2 bg-surface-container-lowest p-12 rounded-[2rem] flex flex-col justify-between">
         <div>
           <span class="material-symbols-outlined text-secondary text-5xl mb-6 block">medical_services</span>
-          <h3 class="text-3xl font-bold mb-4">Consultas Especializadas</h3>
+          <h3 class="text-3xl font-bold mb-4">Consultas Médicas</h3>
           <p class="text-on-surface-variant text-lg leading-relaxed max-w-xl">
-            Desde chequeos generales hasta especialidades avanzadas, nuestro equipo médico está aquí
-            para escucharte y guiarte.
+            Consulta médica general: certificados médicos, prueba COVID y más.
+            Consulta bariátrica para control de peso con seguimiento personalizado.
           </p>
         </div>
         <div class="mt-12 flex flex-wrap items-center gap-4">
@@ -31,15 +31,15 @@
         </div>
       </div>
 
-      <!-- Laboratorio -->
+      <!-- Sueroterapia & Psicología -->
       <div class="bg-secondary text-on-secondary p-12 rounded-[2rem] flex flex-col justify-center">
-        <span class="material-symbols-outlined text-6xl mb-6">biotech</span>
-        <h3 class="text-2xl font-bold mb-4">Laboratorio In-House</h3>
+        <span class="material-symbols-outlined text-6xl mb-6">vaccines</span>
+        <h3 class="text-2xl font-bold mb-4">Sueroterapia &amp; Psicología</h3>
         <p class="opacity-80 text-sm leading-relaxed mb-8">
-          Resultados rápidos y precisos con la última tecnología en diagnóstico clínico.
+          Sueroterapia revitalizante y atención psicológica / tanatológica para niños, adolescentes y adultos.
         </p>
-        <button class="text-on-secondary flex items-center gap-2 font-bold group">
-          Agendar Prueba
+        <button class="text-on-secondary flex items-center gap-2 font-bold group" (click)="scrollToContact()">
+          Agendar cita
           <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
         </button>
       </div>

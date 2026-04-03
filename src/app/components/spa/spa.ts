@@ -16,18 +16,18 @@ export class SpaComponent {
   services: SpaService[] = [
     {
       icon: 'spa',
-      title: 'Masajes Terapéuticos',
-      description: 'Desde piedras calientes hasta técnicas de tejido profundo.',
+      title: 'Masajes',
+      description: 'Relajante, descontracturante y drenaje linfático.',
     },
     {
-      icon: 'self_care',
-      title: 'Rituales de Belleza',
-      description: 'Tratamientos faciales con extractos botánicos puros.',
+      icon: 'face',
+      title: 'Tratamientos Faciales',
+      description: 'Facial básico, fototerapia, dermapen y limpieza profunda.',
     },
     {
-      icon: 'pool',
-      title: 'Circuito Hidrotermal',
-      description: 'Piscinas de contraste y saunas aromáticas.',
+      icon: 'self_improvement',
+      title: 'Tratamientos Corporales',
+      description: 'Moldeamiento, maderoterapia, depilación láser y más.',
     },
   ];
 }

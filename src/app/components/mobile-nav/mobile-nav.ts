@@ -19,7 +19,8 @@ export class MobileNavComponent {
   items: NavItem[] = [
     { id: 'nutricion', icon: 'nutrition',         label: 'Nutrición' },
     { id: 'medicina',  icon: 'medical_services',  label: 'Medicina'  },
-    { id: 'spa',       icon: 'spa',               label: 'Spa'       },
+    { id: 'spa',       icon: 'spa',               label: 'Spa & Estética' },
+    { id: 'precios',   icon: 'sell',              label: 'Precios'   },
     { id: 'contacto',  icon: 'mail',              label: 'Contacto'  },
   ];
 

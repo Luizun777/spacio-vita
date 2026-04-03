@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './medicine.scss',
 })
 export class MedicineComponent {
-  specialties = ['CARDIOLOGÍA', 'DERMATOLOGÍA', 'ENDOCRINOLOGÍA'];
+  specialties = ['MEDICINA GENERAL', 'BARIÁTRICA', 'SUEROTERAPIA', 'PSICOLOGÍA'];
+
+  scrollToContact(): void {
+    const el = document.getElementById('contacto');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }
 }
