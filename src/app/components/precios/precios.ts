@@ -11,6 +11,7 @@ interface Service {
 interface Category {
   name: string;
   services: Service[];
+  image?: string;
 }
 
 @Component({
@@ -23,6 +24,7 @@ export class PreciosComponent {
   categories: Category[] = [
     {
       name: 'Consultas',
+      image: 'https://source.unsplash.com/1024x768/?medical%20consultation%20doctor%20patient',
       services: [
         {
           name: 'Consulta médica general',
@@ -38,6 +40,7 @@ export class PreciosComponent {
     },
     {
       name: 'Faciales',
+      image: 'https://source.unsplash.com/1024x768/?facial%20treatment%20spa%20beauty%20skincare',
       services: [
         { name: 'Facial básico', price: 500 },
         { name: 'Facial fototerapia', price: 800 },
@@ -50,6 +53,7 @@ export class PreciosComponent {
     },
     {
       name: 'Corporales',
+      image: 'https://source.unsplash.com/1024x768/?body%20massage%20therapy%20spa%20wellness',
       services: [
         {
           name: 'Silueta +40',
@@ -71,6 +75,7 @@ export class PreciosComponent {
     },
     {
       name: 'Depilación láser',
+      image: 'https://source.unsplash.com/1024x768/?laser%20hair%20removal%20clinic%20beauty',
       services: [
         { name: 'Cuerpo completo', price: 12900, promo: '2x1' },
         { name: 'Axila y bikini', price: 999 },
@@ -80,6 +85,7 @@ export class PreciosComponent {
     },
     {
       name: 'Masajes',
+      image: 'https://source.unsplash.com/1024x768/?therapeutic%20massage%20spa%20relaxation',
       services: [
         { name: 'Relajante', price: 650 },
         { name: 'Descontracturante', price: 650 },
@@ -88,7 +94,8 @@ export class PreciosComponent {
       ],
     },
     {
-      name: 'Otros',
+      name: 'Psicología y Bienestar',
+      image: 'https://source.unsplash.com/1024x768/?psychology%20counseling%20therapy%20office',
       services: [
         { name: 'Sueroterapia revitalizante', price: 999 },
         {
