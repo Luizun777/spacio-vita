@@ -202,29 +202,34 @@ $ease-ultra-silk: cubic-bezier(0.45, 0, 0.55, 1);  /* Perfect ease-in-out */
 .animate-stagger-5 { animation-delay: 0.75s; }
 .animate-stagger-6 { animation-delay: 0.9s; }
 
-/* ── SUPER LENTO Transitions (MANTEQUILLA) ─────────────────── */
+/* ── ULTRA LENTO Transitions - HOVER SUAVE (3 SEGUNDOS) ───── */
 button, a, [role="button"] {
-  transition: all 1.2s $ease-ultra-silk;
+  transition: all 2.5s $ease-ultra-silk;
+
+  &:hover {
+    transition: all 3s $ease-ultra-silk;
+  }
 }
 
 input, textarea, select {
-  transition: all 1.2s $ease-ultra-silk;
+  transition: all 2.5s $ease-ultra-silk;
 
-  &:focus {
+  &:focus, &:hover {
+    transition: all 3s $ease-ultra-silk;
     transform: scale(1.002);
   }
 }
 
-/* ── Hover Effects (SUPER LENTO) ───────────────────────────– */
+/* ── Hover Effects (ULTRA LENTO - 3-4 SEGUNDOS) ────────────– */
 .group:hover {
   .group-hover\:scale-105 {
     transform: scale(1.04);
-    transition: transform 1.5s $ease-ultra-silk;
+    transition: transform 3.5s $ease-ultra-silk;
   }
 }
 
 img {
-  transition: transform 1.2s $ease-ultra-silk, filter 1.2s $ease-ultra-silk;
+  transition: transform 2.5s $ease-ultra-silk, filter 2.5s $ease-ultra-silk;
 
   &:hover {
     transform: scale(1.02);
@@ -232,9 +237,9 @@ img {
   }
 }
 
-/* ── Card Transitions (SUPER LENTO) ───────────────────────── */
+/* ── Card Transitions (ULTRA LENTO) ──────────────────────── */
 .card, [class*="card"], [class*="service"] {
-  transition: all 1.5s $ease-ultra-silk;
+  transition: all 3s $ease-ultra-silk;
 
   &:hover {
     transform: translateY(-3px);
@@ -242,32 +247,46 @@ img {
   }
 }
 
-/* ── Link Hover Effects ─────────────────────────────────────– */
+/* ── Link Hover Effects (ULTRA LENTO) ────────────────────── */
 a:not([class]) {
   position: relative;
-  transition: color 1.2s $ease-ultra-silk;
+  transition: color 2.5s $ease-ultra-silk;
 
   &:hover {
     color: #556B2F;
   }
 }
 
-/* ── Form Elements SUPER LENTO ──────────────────────────────– */
+/* ── Form Elements ULTRA LENTO (HOVER SUAVE) ────────────────– */
 input:not([type="radio"]):not([type="checkbox"]),
 textarea,
 select {
-  transition: border-color 1.2s $ease-ultra-silk,
-              box-shadow 1.2s $ease-ultra-silk,
-              background-color 1.2s $ease-ultra-silk;
+  transition: border-color 2.5s $ease-ultra-silk,
+              box-shadow 2.5s $ease-ultra-silk,
+              background-color 2.5s $ease-ultra-silk;
+
+  &:hover, &:focus {
+    transition: border-color 3s $ease-ultra-silk,
+                box-shadow 3s $ease-ultra-silk,
+                background-color 3s $ease-ultra-silk;
+  }
 }
 
-/* ── Shadow & Color SUPER LENTO ──────────────────────────────– */
+/* ── Shadow & Color ULTRA LENTO (HOVER SUAVE) ──────────────– */
 [class*="shadow"] {
-  transition: box-shadow 1.2s $ease-ultra-silk;
+  transition: box-shadow 2.5s $ease-ultra-silk;
+
+  &:hover {
+    transition: box-shadow 3s $ease-ultra-silk;
+  }
 }
 
 [class*="bg-"] {
-  transition: background-color 1.2s $ease-ultra-silk;
+  transition: background-color 2.5s $ease-ultra-silk;
+
+  &:hover {
+    transition: background-color 3s $ease-ultra-silk;
+  }
 }
 
 /* ── Smooth Scroll Behavior ──────────────────────────────────– */
