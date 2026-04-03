@@ -1,15 +1,21 @@
-<nav class="fixed bottom-0 w-full z-50 rounded-t-3xl md:hidden bg-[#FBFBE2] shadow-[0_-10px_30px_rgba(27,29,14,0.08)]">
-  <div class="flex justify-around items-center px-4 pb-6 pt-3">
+<nav class="fixed bottom-0 w-full z-50 lg:hidden bg-[#0D0608] border-t border-white/5
+            shadow-[0_-4px_24px_rgba(0,0,0,0.6)]">
+  <div class="flex justify-around items-center px-2 pb-safe pt-2">
     @for (item of items; track item.id) {
-      <div
-        class="flex flex-col items-center justify-center rounded-2xl p-2 cursor-pointer transition-all"
-        [class.bg-[#556B2F]]="activeItem() === item.id"
-        [class.text-white]="activeItem() === item.id"
-        [class.text-[#556B2F]]="activeItem() !== item.id"
+      <button
+        class="flex flex-col items-center justify-center gap-1 px-3 py-2 cursor-pointer transition-all duration-200 relative"
         (click)="scrollTo(item.id)">
-        <span class="material-symbols-outlined">{{ item.icon }}</span>
-        <span class="text-[10px] font-medium uppercase tracking-widest">{{ item.label }}</span>
-      </div>
+        <!-- Gold active indicator bar -->
+        @if (activeItem() === item.id) {
+          <span class="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-[#FFBB00] rounded-full"></span>
+        }
+        <span class="material-symbols-outlined text-xl transition-colors duration-200"
+              [class.text-[#FFBB00]]="activeItem() === item.id"
+              [class.text-white/30]="activeItem() !== item.id">{{ item.icon }}</span>
+        <span class="text-[9px] font-medium uppercase tracking-widest transition-colors duration-200"
+              [class.text-[#FFBB00]]="activeItem() === item.id"
+              [class.text-white/30]="activeItem() !== item.id">{{ item.label }}</span>
+      </button>
     }
   </div>
 </nav>

@@ -1,37 +1,89 @@
-<footer class="w-full bg-[#F5F5DC] mt-20 border-t border-[#dbdcc3]">
-  <div class="w-full px-8 py-12 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto">
+<footer class="w-full bg-[#0D0608]">
 
-    <!-- Brand -->
-    <div class="mb-8 md:mb-0">
-      <div class="font-headline italic text-xl text-[#3E5219]">Spacio Vita</div>
-      <p class="text-sm leading-relaxed text-[#3E5219] opacity-70 mt-2">
-        Dedicados a tu salud desde un enfoque holístico y científico.
+  <!-- Top gold line -->
+  <div class="gold-line"></div>
+
+  <!-- Main grid -->
+  <div class="max-w-screen-xl mx-auto px-8 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+
+    <!-- Brand column -->
+    <div>
+      <div class="font-headline italic text-2xl text-[#FFBB00] mb-4">Spacio Vita</div>
+      <p class="text-white/40 text-sm leading-relaxed max-w-xs">
+        Centro de bienestar integral donde la medicina de vanguardia, la nutrición consciente
+        y la estética se unen para tu transformación.
       </p>
     </div>
 
-    <!-- Links & icons -->
-    <div class="flex flex-col md:flex-row gap-8 items-center">
-      <div class="flex gap-6">
-        @for (link of links; track link.label) {
+    <!-- Nav links column -->
+    <div>
+      <p class="text-[#FFBB00] text-[10px] tracking-[0.35em] uppercase mb-6 font-medium">Navegación</p>
+      <nav class="flex flex-col gap-3">
+        @for (link of navLinks; track link.label) {
           <a [href]="link.href"
-             class="text-sm text-[#3E5219] opacity-70 hover:opacity-100 transition-opacity">
+             class="text-sm text-white/40 hover:text-[#FFBB00] transition-colors duration-300">
             {{ link.label }}
           </a>
         }
-      </div>
-      <div class="flex gap-4">
-        <span class="material-symbols-outlined text-[#3E5219]">public</span>
-        <span class="material-symbols-outlined text-[#3E5219]">medical_information</span>
-        <span class="material-symbols-outlined text-[#3E5219]">verified_user</span>
-      </div>
+      </nav>
+    </div>
+
+    <!-- Contact / hours column -->
+    <div>
+      <p class="text-[#FFBB00] text-[10px] tracking-[0.35em] uppercase mb-6 font-medium">Información</p>
+      <ul class="flex flex-col gap-3 text-sm text-white/40">
+        <li class="flex items-start gap-2">
+          <span class="text-[#FFBB00]/60 mt-0.5">&#9679;</span>
+          Lun – Vie: 8:00 am – 8:00 pm
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-[#FFBB00]/60 mt-0.5">&#9679;</span>
+          Sáb: 9:00 am – 4:00 pm
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-[#FFBB00]/60 mt-0.5">&#9679;</span>
+          Ciudad de México, CDMX
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-[#FFBB00]/60 mt-0.5">&#9679;</span>
+          contacto&#64;spaciovita.mx
+        </li>
+      </ul>
     </div>
 
   </div>
 
-  <!-- Copyright -->
-  <div class="w-full text-center pb-8">
-    <p class="text-sm text-[#3E5219] opacity-70">
-      &copy; {{ currentYear }} Spacio Vita. Clinical Sanctuary.
+  <!-- Gold separator -->
+  <div class="h-px bg-gradient-to-r from-transparent via-[#FFBB00]/20 to-transparent mx-8"></div>
+
+  <!-- Bottom bar -->
+  <div class="max-w-screen-xl mx-auto px-8 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+
+    <!-- Copyright -->
+    <p class="text-xs text-white/25 tracking-widest uppercase">
+      &copy; {{ currentYear }} Spacio Vita. Todos los derechos reservados.
     </p>
+
+    <!-- Social icons (placeholder spans) -->
+    <div class="flex items-center gap-5">
+      @for (link of links; track link.label) {
+        <a [href]="link.href"
+           class="text-xs text-white/25 hover:text-[#FFBB00] tracking-widest uppercase transition-colors duration-300">
+          {{ link.label }}
+        </a>
+      }
+      <span class="w-px h-4 bg-white/10"></span>
+      <span class="text-white/25 hover:text-[#FFBB00] transition-colors duration-300 cursor-pointer" title="Instagram">
+        &#x25A1;
+      </span>
+      <span class="text-white/25 hover:text-[#FFBB00] transition-colors duration-300 cursor-pointer" title="Facebook">
+        &#x25A1;
+      </span>
+      <span class="text-white/25 hover:text-[#FFBB00] transition-colors duration-300 cursor-pointer" title="TikTok">
+        &#x25A1;
+      </span>
+    </div>
+
   </div>
+
 </footer>

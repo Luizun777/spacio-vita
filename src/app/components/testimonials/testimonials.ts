@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, signal, AfterViewInit } from '@angular/core';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -18,21 +18,26 @@ export interface Testimonial {
   styleUrl: './testimonials.scss',
 })
 export class TestimonialsComponent implements AfterViewInit {
+  activeIndex = 0;
+
   testimonials: Testimonial[] = [
     {
-      quote: 'Me hice el paquete Silueta +40 y los resultados fueron increíbles. El personal es muy profesional y el trato excelente.',
+      quote:
+        'Me hice el paquete Silueta +40 y los resultados fueron increíbles. El personal es muy profesional y el trato excelente.',
       name: 'Cliente de Google Maps',
       role: 'Tratamientos Corporales',
       avatarColor: 'bg-primary-fixed',
     },
     {
-      quote: 'La limpieza facial profunda quedé muy contenta, mi piel se veía radiante. Definitivamente regreso por la renovación facial.',
+      quote:
+        'La limpieza facial profunda quedé muy contenta, mi piel se veía radiante. Definitivamente regreso por la renovación facial.',
       name: 'Cliente de Google Maps',
       role: 'Tratamientos Faciales',
       avatarColor: 'bg-secondary-container',
     },
     {
-      quote: 'Excelente atención médica, la consulta general muy completa. El ambiente es muy agradable y el equipo muy amable.',
+      quote:
+        'Excelente atención médica, la consulta general muy completa. El ambiente es muy agradable y el equipo muy amable.',
       name: 'Cliente de Google Maps',
       role: 'Consultas Médicas',
       avatarColor: 'bg-primary-fixed',
@@ -40,6 +45,10 @@ export class TestimonialsComponent implements AfterViewInit {
   ];
 
   stars = [1, 2, 3, 4, 5];
+
+  setActive(i: number): void {
+    this.activeIndex = i;
+  }
 
   ngAfterViewInit(): void {
     this.animateSection();
@@ -49,14 +58,14 @@ export class TestimonialsComponent implements AfterViewInit {
     const section = document.querySelector('#testimonios');
     if (!section) return;
 
-    // Animate title
+    // Animate section header
     gsap.fromTo(
-      section.querySelector('.testimonials-title'),
-      { opacity: 0, y: 20 },
+      section.querySelector('.testimonials-header'),
+      { opacity: 0, y: 30 },
       {
         opacity: 1,
         y: 0,
-        duration: 0.8,
+        duration: 0.9,
         ease: 'power2.out',
         scrollTrigger: {
           trigger: section,
@@ -66,20 +75,36 @@ export class TestimonialsComponent implements AfterViewInit {
       }
     );
 
-    // Animate testimonial cards with stagger and rotation
+    // Animate feature quote block
+    gsap.fromTo(
+      section.querySelector('.testimonial-feature'),
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 1,
+        ease: 'power2.out',
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 75%',
+          once: true,
+        },
+      }
+    );
+
+    // Animate testimonial cards with stagger
     gsap.fromTo(
       section.querySelectorAll('.testimonial-card'),
-      { opacity: 0, y: 30, rotationX: 10 },
+      { opacity: 0, y: 20 },
       {
         opacity: 1,
         y: 0,
-        rotationX: 0,
-        duration: 0.8,
+        duration: 0.7,
         ease: 'power2.out',
-        stagger: 0.15,
+        stagger: 0.12,
         scrollTrigger: {
-          trigger: section,
-          start: 'top 80%',
+          trigger: section.querySelector('.grid'),
+          start: 'top 85%',
           once: true,
         },
       }

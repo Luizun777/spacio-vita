@@ -49,54 +49,105 @@ export class ContactComponent implements AfterViewInit {
     const section = document.querySelector('#contacto');
     if (!section) return;
 
-    // Animate title
+    // Animate contact header
     gsap.fromTo(
-      section.querySelector('.contact-title'),
-      { opacity: 0, y: 20 },
+      section.querySelector('.contact-header'),
+      { opacity: 0, y: 30 },
       {
         opacity: 1,
         y: 0,
+        duration: 0.9,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 80%',
+          once: true,
+        },
+      }
+    );
+
+    // Animate map
+    gsap.fromTo(
+      section.querySelector('.contact-map'),
+      { opacity: 0 },
+      {
+        opacity: 1,
         duration: 0.8,
         ease: 'power2.out',
         scrollTrigger: {
-          trigger: section,
-          start: 'top 80%',
+          trigger: section.querySelector('.contact-map'),
+          start: 'top 85%',
           once: true,
         },
       }
     );
 
-    // Animate form with stagger
+    // Animate info panel (slide from left)
     gsap.fromTo(
-      section.querySelectorAll('.contact-input'),
-      { opacity: 0, x: -20 },
+      section.querySelector('.contact-info'),
+      { opacity: 0, x: -40 },
       {
         opacity: 1,
         x: 0,
-        duration: 0.6,
+        duration: 0.9,
         ease: 'power2.out',
-        stagger: 0.1,
         scrollTrigger: {
-          trigger: section,
-          start: 'top 80%',
+          trigger: section.querySelector('.grid'),
+          start: 'top 85%',
           once: true,
         },
       }
     );
 
-    // Animate submit button
+    // Animate form panel (slide from right)
     gsap.fromTo(
-      section.querySelector('.contact-submit'),
-      { opacity: 0, y: 20 },
+      section.querySelector('.contact-form'),
+      { opacity: 0, x: 40 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.9,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: section.querySelector('.grid'),
+          start: 'top 85%',
+          once: true,
+        },
+      }
+    );
+
+    // Animate form inputs with stagger
+    gsap.fromTo(
+      section.querySelectorAll('.contact-input'),
+      { opacity: 0, y: 15 },
       {
         opacity: 1,
         y: 0,
         duration: 0.6,
         ease: 'power2.out',
+        stagger: 0.1,
         delay: 0.3,
         scrollTrigger: {
-          trigger: section,
-          start: 'top 80%',
+          trigger: section.querySelector('.contact-form'),
+          start: 'top 85%',
+          once: true,
+        },
+      }
+    );
+
+    // Animate submit button last
+    gsap.fromTo(
+      section.querySelector('.contact-submit'),
+      { opacity: 0, y: 10 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: 'power2.out',
+        delay: 0.7,
+        scrollTrigger: {
+          trigger: section.querySelector('.contact-form'),
+          start: 'top 85%',
           once: true,
         },
       }

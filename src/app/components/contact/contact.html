@@ -1,125 +1,128 @@
-<section id="contacto" class="py-32 bg-surface">
+<section id="contacto" class="py-32 bg-[#0D0608]">
   <div class="max-w-screen-xl mx-auto px-8">
 
-    <!-- Map -->
-    <div class="mb-12 rounded-3xl overflow-hidden shadow-md">
+    <!-- Header -->
+    <div class="contact-header text-center mb-20 opacity-0">
+      <div class="flex items-center justify-center gap-6 mb-6">
+        <div class="h-px flex-1 max-w-24 bg-gradient-to-r from-transparent to-[#FFBB00]/40"></div>
+        <span class="text-[#FFBB00] text-xs tracking-[0.4em] uppercase font-medium">Contacto</span>
+        <div class="h-px flex-1 max-w-24 bg-gradient-to-l from-transparent to-[#FFBB00]/40"></div>
+      </div>
+      <h2 class="font-headline text-5xl md:text-6xl text-white">
+        Agenda tu <span class="text-[#FFBB00] italic">Visita</span>
+      </h2>
+    </div>
+
+    <!-- Map full width -->
+    <div class="contact-map mb-12 opacity-0 border border-white/5">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.5!2d-99.1600528!3d19.3627159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff003e63593b%3A0xc4f94b3dee8653f!2sSpacio%20Vita!5e0!3m2!1ses!2smx!4v1"
-        width="100%"
-        height="350"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Ubicación de Spacio Vita">
-      </iframe>
+        width="100%" height="320" style="border:0;display:block;filter:grayscale(80%) invert(90%) contrast(90%);"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Ubicación de Spacio Vita"></iframe>
     </div>
 
-    <!-- Info + Form side by side -->
-    <div class="flex flex-col lg:flex-row gap-8 items-start">
+    <!-- Info + Form -->
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-0">
 
-      <!-- Location info -->
-      <div class="lg:w-1/3 bg-surface-container-low rounded-3xl p-10">
-        <h3 class="text-2xl font-bold mb-6">Encuéntranos</h3>
-        <div class="space-y-5 text-sm">
-          <div class="flex items-start gap-3">
-            <span class="material-symbols-outlined text-primary shrink-0">location_on</span>
-            <p class="text-on-surface-variant leading-relaxed">Spacio Vita — Ciudad de México</p>
-          </div>
-          <div class="flex items-start gap-3">
-            <span class="material-symbols-outlined text-primary shrink-0">directions</span>
-            <a
-              href="https://www.google.com/maps/place/Spacio+Vita/@19.3591769,-99.1574758,15z/data=!4m6!3m5!1s0x85d1ff003e63593b:0xc4f94b3dee8653f!8m2!3d19.3627159!4d-99.1600528!16s%2Fg%2F11wc2yg9ny"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-primary font-semibold hover:underline">
-              Cómo llegar →
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Contact form -->
-      <div class="lg:w-2/3">
-        <div class="bg-surface-container-low rounded-[3rem] p-12 md:p-16 relative overflow-hidden">
-
-          <!-- Header -->
-          <div class="relative z-10 text-center mb-12">
-            <h2 class="contact-title text-4xl font-bold mb-4">Contáctanos</h2>
-            <p class="text-on-surface-variant">
-              Estamos aquí para responder tus preguntas y agendar tu primera visita.
-            </p>
-          </div>
-
-          <!-- Success message -->
-          @if (submitted) {
-            <div class="relative z-10 text-center py-12">
-              <span class="material-symbols-outlined text-primary text-6xl mb-4 block">check_circle</span>
-              <h3 class="text-2xl font-bold text-primary mb-2">¡Solicitud enviada!</h3>
-              <p class="text-on-surface-variant">Nos pondremos en contacto contigo pronto.</p>
+      <!-- Info panel -->
+      <div class="contact-info lg:col-span-2 bg-[#471A1F] p-10 lg:p-12 opacity-0">
+        <div class="h-px w-12 bg-[#FFBB00] mb-8"></div>
+        <h3 class="font-headline text-2xl text-white mb-8">Spacio Vita</h3>
+        <div class="space-y-6 text-sm">
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-[#FFBB00] text-xl shrink-0 mt-0.5">location_on</span>
+            <div>
+              <p class="text-white/40 text-xs uppercase tracking-widest mb-1">Dirección</p>
+              <p class="text-white/80">Ciudad de México, CDMX</p>
             </div>
-          }
-
-          <!-- Form -->
-          @if (!submitted) {
-            <form class="relative z-10 space-y-6" (ngSubmit)="onSubmit()" #contactForm="ngForm">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="contact-input">
-                  <label class="block text-sm font-semibold mb-2 ml-1">Nombre Completo</label>
-                  <input
-                    class="w-full bg-white/60 border-none rounded-xl focus:ring-2 focus:ring-primary/30 py-4 px-6"
-                    type="text"
-                    placeholder="Ej. Ana García"
-                    [(ngModel)]="form.nombre"
-                    name="nombre"
-                    required>
-                </div>
-                <div class="contact-input">
-                  <label class="block text-sm font-semibold mb-2 ml-1">Correo Electrónico</label>
-                  <input
-                    class="w-full bg-white/60 border-none rounded-xl focus:ring-2 focus:ring-primary/30 py-4 px-6"
-                    type="email"
-                    placeholder="ana@ejemplo.com"
-                    [(ngModel)]="form.email"
-                    name="email"
-                    required>
-                </div>
-              </div>
-
-              <div class="contact-input">
-                <label class="block text-sm font-semibold mb-2 ml-1">Servicio de Interés</label>
-                <select
-                  class="w-full bg-white/60 border-none rounded-xl focus:ring-2 focus:ring-primary/30 py-4 px-6"
-                  [(ngModel)]="form.servicio"
-                  name="servicio">
-                  @for (s of servicios; track s) {
-                    <option [value]="s">{{ s }}</option>
-                  }
-                </select>
-              </div>
-
-              <div class="contact-input">
-                <label class="block text-sm font-semibold mb-2 ml-1">Mensaje</label>
-                <textarea
-                  class="w-full bg-white/60 border-none rounded-xl focus:ring-2 focus:ring-primary/30 py-4 px-6"
-                  rows="4"
-                  placeholder="¿Cómo podemos ayudarte?"
-                  [(ngModel)]="form.mensaje"
-                  name="mensaje">
-                </textarea>
-              </div>
-
-              <button
-                type="submit"
-                class="contact-submit w-full bg-primary text-on-primary py-5 rounded-full text-lg font-bold hover:opacity-95 transition-all">
-                Enviar Solicitud
-              </button>
-            </form>
-          }
-
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-[#FFBB00] text-xl shrink-0 mt-0.5">schedule</span>
+            <div>
+              <p class="text-white/40 text-xs uppercase tracking-widest mb-1">Horario</p>
+              <p class="text-white/80">Lunes – Sábado<br>9:00 – 20:00</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-[#FFBB00] text-xl shrink-0 mt-0.5">directions</span>
+            <div>
+              <p class="text-white/40 text-xs uppercase tracking-widest mb-1">Cómo llegar</p>
+              <a href="https://www.google.com/maps/place/Spacio+Vita/@19.3591769,-99.1574758,15z"
+                 target="_blank" rel="noopener noreferrer"
+                 class="text-[#FFBB00] hover:text-white transition-colors text-sm">
+                Ver en Google Maps →
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 pt-8 border-t border-white/10">
+          <p class="font-headline italic text-white/30 text-sm leading-relaxed">
+            "Tu bienestar es nuestra prioridad."
+          </p>
         </div>
       </div>
 
+      <!-- Form -->
+      <div class="contact-form lg:col-span-3 bg-[#160B0D] border border-white/5 border-l-0 p-10 lg:p-12 opacity-0">
+        <div class="h-px w-full bg-gradient-to-r from-[#FFBB00] to-transparent mb-8"></div>
+        <h3 class="font-headline text-xl text-white mb-8">Envíanos un mensaje</h3>
+
+        @if (submitted) {
+          <div class="text-center py-16">
+            <span class="material-symbols-outlined text-[#FFBB00] text-5xl block mb-4">check_circle</span>
+            <p class="font-headline text-xl text-white mb-2">¡Mensaje enviado!</p>
+            <p class="text-white/40 text-sm">Nos pondremos en contacto pronto.</p>
+          </div>
+        }
+
+        @if (!submitted) {
+          <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="space-y-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div class="contact-input opacity-0">
+                <label class="block text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Nombre</label>
+                <input type="text" [(ngModel)]="form.nombre" name="nombre" required
+                  placeholder="Ana García"
+                  class="w-full bg-transparent border border-white/10 text-white text-sm px-4 py-3
+                         placeholder:text-white/20 focus:border-[#FFBB00]/60 focus:outline-none focus:ring-0
+                         transition-colors duration-200">
+              </div>
+              <div class="contact-input opacity-0">
+                <label class="block text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Email</label>
+                <input type="email" [(ngModel)]="form.email" name="email" required
+                  placeholder="ana@ejemplo.com"
+                  class="w-full bg-transparent border border-white/10 text-white text-sm px-4 py-3
+                         placeholder:text-white/20 focus:border-[#FFBB00]/60 focus:outline-none focus:ring-0
+                         transition-colors duration-200">
+              </div>
+            </div>
+            <div class="contact-input opacity-0">
+              <label class="block text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Servicio</label>
+              <select [(ngModel)]="form.servicio" name="servicio"
+                class="w-full bg-[#0D0608] border border-white/10 text-white/70 text-sm px-4 py-3
+                       focus:border-[#FFBB00]/60 focus:outline-none focus:ring-0 transition-colors duration-200">
+                @for (s of servicios; track s) {
+                  <option [value]="s">{{ s }}</option>
+                }
+              </select>
+            </div>
+            <div class="contact-input opacity-0">
+              <label class="block text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Mensaje</label>
+              <textarea [(ngModel)]="form.mensaje" name="mensaje" rows="4"
+                placeholder="¿Cómo podemos ayudarte?"
+                class="w-full bg-transparent border border-white/10 text-white text-sm px-4 py-3
+                       placeholder:text-white/20 focus:border-[#FFBB00]/60 focus:outline-none focus:ring-0
+                       transition-colors duration-200 resize-none"></textarea>
+            </div>
+            <button type="submit" class="contact-submit opacity-0 w-full bg-[#FFBB00] text-[#0D0608] py-4
+                          text-xs font-bold tracking-[0.3em] uppercase
+                          hover:bg-white transition-colors duration-300 mt-2">
+              Enviar Solicitud
+            </button>
+          </form>
+        }
+      </div>
     </div>
+
   </div>
 </section>

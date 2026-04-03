@@ -1,34 +1,65 @@
-<nav class="fixed top-0 w-full z-50 bg-[#FBFBE2]/80 backdrop-blur-md shadow-[0_20px_40px_rgba(27,29,14,0.05)]">
-  <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto w-full">
+<nav
+  class="fixed top-0 w-full z-50 transition-all duration-500"
+  [class.scrolled]="isScrolled()"
+  [style.background]="isScrolled() ? '#0D0608' : 'transparent'"
+  [style.border-bottom]="isScrolled() ? '1px solid rgba(255,187,0,0.25)' : '1px solid transparent'">
+
+  <div class="flex justify-between items-center px-8 py-5 max-w-screen-xl mx-auto w-full">
 
     <!-- Brand -->
-    <div class="font-headline text-2xl font-bold text-[#3E5219] tracking-tighter cursor-pointer">
+    <div class="font-headline italic text-2xl text-[#FFBB00] tracking-wide cursor-pointer"
+         (click)="scrollTo('hero')">
       Spacio Vita
     </div>
 
     <!-- Desktop links -->
-    <div class="hidden md:flex items-center gap-10">
+    <div class="hidden md:flex items-center gap-8">
       @for (section of sections; track section.id) {
         <a
-          class="font-headline text-lg tracking-tight transition-all cursor-pointer hover:text-[#3E5219]"
-          [class.font-bold]="activeSection() === section.id"
-          [class.border-b-2]="activeSection() === section.id"
-          [class.border-[#3E5219]]="activeSection() === section.id"
-          [class.pb-1]="activeSection() === section.id"
-          [class.text-[#3E5219]]="activeSection() === section.id"
-          [class.text-[#556B2F]]="activeSection() !== section.id"
-          [class.font-medium]="activeSection() !== section.id"
+          class="text-xs tracking-widest uppercase transition-colors duration-300 cursor-pointer"
+          [class.text-white]="activeSection() !== section.id"
+          [class.text-[#FFBB00]]="activeSection() === section.id"
+          [style.color]="activeSection() === section.id ? '#FFBB00' : 'rgba(255,255,255,0.6)'"
           (click)="scrollTo(section.id)">
           {{ section.label }}
         </a>
       }
     </div>
 
-    <!-- CTA -->
-    <button
-      class="bg-[#556B2F] text-white px-6 py-2 rounded-full font-medium hover:opacity-90 active:scale-95 duration-200 transition-all"
-      (click)="scrollTo('contacto')">
-      Reservar
-    </button>
+    <!-- CTA + Mobile hamburger -->
+    <div class="flex items-center gap-4">
+      <button
+        class="hidden md:block bg-[#FFBB00] text-[#0D0608] px-6 py-2.5 text-xs font-bold tracking-[0.2em] uppercase hover:bg-white transition-colors duration-300"
+        (click)="scrollTo('contacto')">
+        Reservar
+      </button>
+
+      <!-- Hamburger -->
+      <button
+        class="md:hidden text-white text-2xl leading-none"
+        (click)="toggleMobile()">
+        {{ mobileOpen() ? '✕' : '☰' }}
+      </button>
+    </div>
+
   </div>
+
+  <!-- Mobile menu -->
+  @if (mobileOpen()) {
+    <div class="md:hidden bg-[#160B0D] border-t border-white/10 px-8 py-6 flex flex-col gap-6">
+      @for (section of sections; track section.id) {
+        <a
+          class="text-xs tracking-widest uppercase text-white/60 hover:text-[#FFBB00] transition-colors duration-300 cursor-pointer"
+          (click)="scrollTo(section.id)">
+          {{ section.label }}
+        </a>
+      }
+      <button
+        class="mt-2 bg-[#FFBB00] text-[#0D0608] px-6 py-3 text-xs font-bold tracking-[0.2em] uppercase w-full hover:bg-white transition-colors duration-300"
+        (click)="scrollTo('contacto')">
+        Reservar
+      </button>
+    </div>
+  }
+
 </nav>

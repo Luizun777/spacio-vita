@@ -1,29 +1,70 @@
-<section id="testimonios" class="py-32 bg-[#FBFBE2]">
-  <div class="max-w-screen-2xl mx-auto px-8">
-    <h2 class="testimonials-title text-4xl font-bold text-center mb-16">Lo que dicen nuestros pacientes</h2>
+<section id="testimonios" class="py-32 bg-[#160B0D] overflow-hidden">
+  <div class="max-w-screen-xl mx-auto px-8">
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Section header -->
+    <div class="testimonials-header text-center mb-20 opacity-0">
+      <div class="flex items-center justify-center gap-6 mb-6">
+        <div class="h-px flex-1 max-w-24 bg-gradient-to-r from-transparent to-[#FFBB00]/40"></div>
+        <span class="text-[#FFBB00] text-xs tracking-[0.4em] uppercase font-medium">Testimonios</span>
+        <div class="h-px flex-1 max-w-24 bg-gradient-to-l from-transparent to-[#FFBB00]/40"></div>
+      </div>
+      <h2 class="font-headline text-5xl md:text-6xl text-white">
+        Lo que dicen <span class="text-[#FFBB00] italic">nuestros pacientes</span>
+      </h2>
+    </div>
+
+    <!-- Large quote feature -->
+    <div class="testimonial-feature mb-12 opacity-0">
+      <div class="relative border border-white/5 p-10 md:p-16 bg-[#0D0608]">
+        <!-- Big quote mark -->
+        <span class="absolute top-6 left-8 font-headline text-8xl text-[#FFBB00]/10 leading-none select-none">"</span>
+        <!-- Stars -->
+        <div class="flex gap-1 mb-6">
+          @for (star of stars; track star) {
+            <span class="text-[#FFBB00] text-sm material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+          }
+        </div>
+        <p class="font-headline text-2xl md:text-3xl text-white/80 italic leading-relaxed mb-8 relative z-10">
+          "{{ testimonials[activeIndex].quote }}"
+        </p>
+        <div class="flex items-center gap-4">
+          <div class="w-10 h-10 rounded-full bg-[#471A1F] flex items-center justify-center">
+            <span class="text-[#FFBB00] text-xs font-bold">{{ testimonials[activeIndex].name.charAt(0) }}</span>
+          </div>
+          <div>
+            <p class="text-white font-semibold text-sm">{{ testimonials[activeIndex].name }}</p>
+            <p class="text-white/40 text-xs">{{ testimonials[activeIndex].role }}</p>
+          </div>
+        </div>
+        <!-- Navigation dots -->
+        <div class="absolute bottom-6 right-8 flex gap-2">
+          @for (t of testimonials; track t.name; let i = $index) {
+            <button (click)="setActive(i)"
+              class="w-2 h-2 rounded-full transition-all duration-300"
+              [class]="i === activeIndex ? 'bg-[#FFBB00] w-6' : 'bg-white/20'">
+            </button>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Side cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       @for (t of testimonials; track t.name; let i = $index) {
-        <div class="testimonial-card bg-surface-container-lowest p-10 rounded-2xl"
-             [class.translate-y-4]="i === 1">
-          <!-- Stars -->
-          <div class="flex text-primary mb-4">
+        <div class="testimonial-card p-6 border border-white/5 opacity-0 cursor-pointer
+                    hover:border-[#FFBB00]/20 transition-all duration-300"
+             [class.bg-white/5]="i === activeIndex"
+             (click)="setActive(i)">
+          <div class="flex gap-1 mb-3">
             @for (star of stars; track star) {
-              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="text-[#FFBB00] text-xs material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
             }
           </div>
-          <!-- Quote -->
-          <p class="text-on-surface-variant italic mb-8">"{{ t.quote }}"</p>
-          <!-- Author -->
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-full" [class]="t.avatarColor"></div>
-            <div>
-              <h4 class="font-bold text-sm text-[#3E5219]">{{ t.name }}</h4>
-              <p class="text-xs text-on-surface-variant">{{ t.role }}</p>
-            </div>
-          </div>
+          <p class="text-white/60 text-xs leading-relaxed italic line-clamp-3">"{{ t.quote }}"</p>
+          <p class="text-white/40 text-xs mt-3">— {{ t.role }}</p>
         </div>
       }
     </div>
+
   </div>
 </section>
