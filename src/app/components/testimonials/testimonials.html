@@ -1,11 +1,12 @@
 <section class="py-32 bg-[#FBFBE2]">
   <div class="max-w-screen-2xl mx-auto px-8">
-    <h2 class="text-4xl font-bold text-center mb-16">Lo que dicen nuestros pacientes</h2>
+    <h2 class="text-4xl font-bold text-center mb-16 animate-slide-down">Lo que dicen nuestros pacientes</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       @for (t of testimonials; track t.name; let i = $index) {
-        <div class="bg-surface-container-lowest p-10 rounded-2xl"
-             [class.translate-y-4]="i === 1">
+        <div class="bg-surface-container-lowest p-10 rounded-2xl hover:shadow-lg hover:scale-105 transition-all animate-slide-up"
+             [class.translate-y-4]="i === 1"
+             [ngClass]="'animate-stagger-' + ((i % 6) + 1)">
           <!-- Stars -->
           <div class="flex text-primary mb-4">
             @for (star of stars; track star) {

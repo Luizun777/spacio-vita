@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 export interface Testimonial {
   quote: string;
@@ -9,7 +10,7 @@ export interface Testimonial {
 
 @Component({
   selector: 'app-testimonials',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './testimonials.html',
   styleUrl: './testimonials.scss',
 })

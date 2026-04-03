@@ -3,17 +3,17 @@
     <div class="flex flex-col lg:flex-row gap-20 items-center">
 
       <!-- Text -->
-      <div class="lg:w-1/2">
-        <span class="text-primary font-bold tracking-widest uppercase text-xs">BELLEZA & BIENESTAR</span>
-        <h2 class="text-5xl font-bold mt-4 mb-8">Spa &amp; Estética</h2>
-        <p class="text-lg text-on-surface-variant leading-relaxed mb-8">
+      <div class="lg:w-1/2 animate-slide-left animate-stagger-1">
+        <span class="text-primary font-bold tracking-widest uppercase text-xs animate-slide-down">BELLEZA & BIENESTAR</span>
+        <h2 class="text-5xl font-bold mt-4 mb-8 animate-slide-up animate-stagger-1">Spa &amp; Estética</h2>
+        <p class="text-lg text-on-surface-variant leading-relaxed mb-8 animate-slide-up animate-stagger-2">
           Cuida tu cuerpo y tu imagen con nuestros tratamientos especializados. Desde masajes
           relajantes hasta depilación láser y cuidado facial con tecnología de punta.
         </p>
         <ul class="space-y-6">
-          @for (service of services; track service.title) {
-            <li class="flex items-start gap-4">
-              <span class="material-symbols-outlined text-primary">{{ service.icon }}</span>
+          @for (service of services; track service.title; let i = $index) {
+            <li class="flex items-start gap-4 hover:translate-x-2 transition-transform animate-slide-left" [ngClass]="'animate-stagger-' + ((i % 6) + 1)">
+              <span class="material-symbols-outlined text-primary animate-float">{{ service.icon }}</span>
               <div>
                 <h4 class="font-bold">{{ service.title }}</h4>
                 <p class="text-sm text-on-surface-variant">{{ service.description }}</p>
@@ -24,26 +24,26 @@
       </div>
 
       <!-- Photo grid -->
-      <div class="lg:w-1/2 grid grid-cols-2 gap-4">
+      <div class="lg:w-1/2 grid grid-cols-2 gap-4 animate-slide-right animate-stagger-2">
         <div class="space-y-4">
           <img
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuA12EQamX5RunwVG235FIUaoejL27vxHCh8qeA8n1rIxe0SmenkdrBXyAjLrT3F-L9369fECDLhTo9wHoiYjGPmEYMuk6zYMWXEqHMI9YHGIk7CDkmM7mfDus7zeq-0nje-yMgt31OaRnrr0qmjFXAjbET2XufQ2CDbkAUDohhE0k4ZcvJukUwAHEaAYc1HAhjgXi-3Xc1JQ2YoO8D8KJWDQoqUtJJjmgYycCsoWOHdS4a4qLLnU2PA_SCXMcaGtEzwUDL56O9s9Zk"
             alt="Masaje terapéutico"
-            class="rounded-3xl h-80 w-full object-cover">
+            class="rounded-3xl h-80 w-full object-cover hover:scale-110 transition-transform">
           <img
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIHYy-gnGmz5hEzOM6oVu2Nr1S9oyAh5nqSQXd0XQw5JWfOe0LcZkcAEajnd19UDx__BBMRTf3Bst78Za3Qh2oXforCmP2msYTV_HO0fBVOWSGogkDtnUlE4loMMk05M9dpGZbJ09bauo-jdHbrLz18wcbo3ESUEajvJvDoelr7QdPiF_0-ggiWu6rw0eNMFoQE7AXKbYtfFpSHuhjodlwygA0ooPmoo3O2HtpI7LoIxwoZfT8HHNLgvXex_U9t8pwPVo9xq3g0g0"
             alt="Sauna"
-            class="rounded-3xl h-60 w-full object-cover">
+            class="rounded-3xl h-60 w-full object-cover hover:scale-110 transition-transform">
         </div>
         <div class="pt-12 space-y-4">
           <img
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRjAJ5sKM-HW1G3B4PEIFryRWLIogij_rg1smw0K3iBSX1iv84jGSZgAZVTKy6_CO30ak6wVlYhnDkqNyvYcKQa7djnBdjoNfmJHZ_FpPDJVd-6XTQx-bGWw1aWaZe-eXpbNJyYyV1L0QWe6EVbKLsZd8oa4R_JT5p9UjIALiQMr0pPOi3f9yVxuUUdHKRg57l3nDn0E20Q1aXaWMaMno3dT9RIUneXrtjiQcHCxls_NSEv9oDg3rXkzignV1ti1c4XSP_v0QadyU"
             alt="Tratamiento facial"
-            class="rounded-3xl h-64 w-full object-cover">
+            class="rounded-3xl h-64 w-full object-cover hover:scale-110 transition-transform">
           <img
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfzR6IGm09hX_Oppc7igBtosywpvj8BUu-AVj9Do4p7wElegGB87lgPbaSpu7qSoxe54FtWa7mhfcPoU-pd7-KM-toAEZ5wcWoOh6qqoqgB3i9MN2J_1KzFaiZGYOc1dp0KDNnAcVTD1zluRG0kfIuFfsS6oCrxxkKwFjurndHQ6RY5e7fMCtauO9ymNUwaFpD9tLfvoYTM60SOjdYv2z-vLL3Cf1C6rb0xDa14fUi0jMcm7uyR9qRXuYFMPo7V2JsK9JfV9Ii5t0"
             alt="Lobby del spa"
-            class="rounded-3xl h-80 w-full object-cover">
+            class="rounded-3xl h-80 w-full object-cover hover:scale-110 transition-transform">
         </div>
       </div>
 

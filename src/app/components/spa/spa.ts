@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 interface SpaService {
   icon: string;
@@ -8,7 +9,7 @@ interface SpaService {
 
 @Component({
   selector: 'app-spa',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './spa.html',
   styleUrl: './spa.scss',
 })

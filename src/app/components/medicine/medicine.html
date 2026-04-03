@@ -3,8 +3,8 @@
 
     <!-- Header -->
     <div class="text-center mb-20">
-      <h2 class="text-5xl font-bold text-on-surface mb-6">Medicina &amp; Atención Experta</h2>
-      <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">
+      <h2 class="text-5xl font-bold text-on-surface mb-6 animate-slide-down">Medicina &amp; Atención Experta</h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto text-lg animate-slide-up animate-stagger-1">
         Tecnología de punta y calidez humana para un diagnóstico integral.
       </p>
     </div>
@@ -13,9 +13,9 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
       <!-- Consultas especializadas -->
-      <div class="md:col-span-2 bg-surface-container-lowest p-12 rounded-[2rem] flex flex-col justify-between">
+      <div class="md:col-span-2 bg-surface-container-lowest p-12 rounded-[2rem] flex flex-col justify-between hover:shadow-lg hover:scale-105 transition-all animate-slide-left animate-stagger-1">
         <div>
-          <span class="material-symbols-outlined text-secondary text-5xl mb-6 block">medical_services</span>
+          <span class="material-symbols-outlined text-secondary text-5xl mb-6 block animate-float">medical_services</span>
           <h3 class="text-3xl font-bold mb-4">Consultas Médicas</h3>
           <p class="text-on-surface-variant text-lg leading-relaxed max-w-xl">
             Consulta médica general: certificados médicos, prueba COVID y más.
@@ -23,8 +23,8 @@
           </p>
         </div>
         <div class="mt-12 flex flex-wrap items-center gap-4">
-          @for (s of specialties; track s) {
-            <span class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold">
+          @for (s of specialties; track s; let i = $index) {
+            <span class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold animate-scale-in" [ngClass]="'animate-stagger-' + ((i % 6) + 1)">
               {{ s }}
             </span>
           }
@@ -32,24 +32,24 @@
       </div>
 
       <!-- Sueroterapia & Psicología -->
-      <div class="bg-secondary text-on-secondary p-12 rounded-[2rem] flex flex-col justify-center">
-        <span class="material-symbols-outlined text-6xl mb-6">vaccines</span>
+      <div class="bg-secondary text-on-secondary p-12 rounded-[2rem] flex flex-col justify-center hover:shadow-lg hover:scale-105 transition-all animate-slide-right animate-stagger-2">
+        <span class="material-symbols-outlined text-6xl mb-6 animate-float" style="animation-delay: 0.5s;">vaccines</span>
         <h3 class="text-2xl font-bold mb-4">Sueroterapia &amp; Psicología</h3>
         <p class="opacity-80 text-sm leading-relaxed mb-8">
           Sueroterapia revitalizante y atención psicológica / tanatológica para niños, adolescentes y adultos.
         </p>
-        <button class="text-on-secondary flex items-center gap-2 font-bold group" (click)="scrollToContact()">
+        <button class="text-on-secondary flex items-center gap-2 font-bold group hover:gap-3" (click)="scrollToContact()">
           Agendar cita
           <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
         </button>
       </div>
 
       <!-- Entorno de confianza -->
-      <div class="bg-surface-container-lowest p-12 rounded-[2rem] md:col-span-3 flex flex-col md:flex-row gap-12 items-center">
+      <div class="bg-surface-container-lowest p-12 rounded-[2rem] md:col-span-3 flex flex-col md:flex-row gap-12 items-center hover:shadow-lg transition-all animate-slide-up animate-stagger-3">
         <img
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjA3RhA1QOzAT0gE6jk-Sy682PoDN4g9tVf1CL6ElTvEYY7wiCLBUjHtVekoLlpEVIjiMe2wRfCHtERD-WPijWT-WyNQGuEwvfuCvODubIPeci0b7iVLbfZ3fA3xp177EabMMufBqpNIX5riy82KO1_82dSO5oEn6GzmL79Wg1ZaOV3ije1llU6yEXwUPIEjFZg0mT6ZkSGQ8mAMMo01QtbnqDWoZgLnC_QZQOsvc9OxjA6-QjlBzc74XtcbJ0vF7MpN1pwa86X4M"
           alt="Sala de consulta"
-          class="w-full md:w-1/3 h-64 object-cover rounded-2xl">
+          class="w-full md:w-1/3 h-64 object-cover rounded-2xl hover:scale-105 transition-transform">
         <div class="flex-1">
           <h3 class="text-2xl font-bold mb-4">Un Entorno de Confianza</h3>
           <p class="text-on-surface-variant leading-relaxed">

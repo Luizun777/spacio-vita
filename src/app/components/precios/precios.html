@@ -12,8 +12,8 @@
 
     <!-- Categories: Mobile Stack, Tablet 2 cols, Desktop 3 cols -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5">
-      @for (category of categories; track category.name) {
-        <div class="bg-surface-container-lowest rounded-xl sm:rounded-2xl overflow-hidden shadow-xs hover:shadow-sm transition-shadow">
+      @for (category of categories; track category.name; let i = $index) {
+        <div class="bg-surface-container-lowest rounded-xl sm:rounded-2xl overflow-hidden shadow-xs hover:shadow-md hover:scale-105 transition-all animate-scale-in" [ngClass]="'animate-stagger-' + ((i % 6) + 1)">
 
           <!-- Category image - Fixed aspect ratio -->
           @if (category.image) {
