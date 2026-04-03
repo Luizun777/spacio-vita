@@ -157,74 +157,74 @@ $ease-ultra-silk: cubic-bezier(0.45, 0, 0.55, 1);  /* Perfect ease-in-out */
   }
 }
 
-/* ── Animation Classes (BUTTERY SMOOTH) ────────────────────── */
+/* ── Animation Classes (SUPER LENTO - MANTEQUILLA PURA) ──────– */
 .animate-fade-in {
-  animation: fadeIn 1.4s $ease-ultra-silk forwards;
+  animation: fadeIn 3s $ease-ultra-silk forwards;
 }
 
 .animate-slide-up {
-  animation: slideInUp 1.6s $ease-ultra-silk forwards;
+  animation: slideInUp 4s $ease-ultra-silk forwards;
 }
 
 .animate-slide-down {
-  animation: slideInDown 1.6s $ease-ultra-silk forwards;
+  animation: slideInDown 4s $ease-ultra-silk forwards;
 }
 
 .animate-slide-left {
-  animation: slideInLeft 1.6s $ease-ultra-silk forwards;
+  animation: slideInLeft 4s $ease-ultra-silk forwards;
 }
 
 .animate-slide-right {
-  animation: slideInRight 1.6s $ease-ultra-silk forwards;
+  animation: slideInRight 4s $ease-ultra-silk forwards;
 }
 
 .animate-scale-in {
-  animation: scaleIn 1.4s $ease-ultra-silk forwards;
+  animation: scaleIn 3s $ease-ultra-silk forwards;
 }
 
 .animate-float {
-  animation: float 6s $ease-silk infinite;
+  animation: float 12s $ease-silk infinite;
 }
 
 .animate-pulse-slow {
-  animation: pulse-slow 5s $ease-silk infinite;
+  animation: pulse-slow 8s $ease-silk infinite;
 }
 
 .animate-glow {
-  animation: glow 4s $ease-silk infinite;
+  animation: glow 8s $ease-silk infinite;
 }
 
-/* ── Staggered Animations (SILK SMOOTH CASCADE) ─────────────– */
-.animate-stagger-1 { animation-delay: 0.1s; }
-.animate-stagger-2 { animation-delay: 0.2s; }
-.animate-stagger-3 { animation-delay: 0.3s; }
-.animate-stagger-4 { animation-delay: 0.4s; }
-.animate-stagger-5 { animation-delay: 0.5s; }
-.animate-stagger-6 { animation-delay: 0.6s; }
+/* ── Staggered Animations (SUPER LENTO CASCADE) ─────────────– */
+.animate-stagger-1 { animation-delay: 0.15s; }
+.animate-stagger-2 { animation-delay: 0.3s; }
+.animate-stagger-3 { animation-delay: 0.45s; }
+.animate-stagger-4 { animation-delay: 0.6s; }
+.animate-stagger-5 { animation-delay: 0.75s; }
+.animate-stagger-6 { animation-delay: 0.9s; }
 
-/* ── BUTTERY SMOOTH Transitions ────────────────────────────── */
+/* ── SUPER LENTO Transitions (MANTEQUILLA) ─────────────────── */
 button, a, [role="button"] {
-  transition: all 0.8s $ease-ultra-silk;
+  transition: all 1.2s $ease-ultra-silk;
 }
 
 input, textarea, select {
-  transition: all 0.8s $ease-ultra-silk;
+  transition: all 1.2s $ease-ultra-silk;
 
   &:focus {
     transform: scale(1.002);
   }
 }
 
-/* ── Hover Effects (SILK SMOOTH) ───────────────────────────── */
+/* ── Hover Effects (SUPER LENTO) ───────────────────────────– */
 .group:hover {
   .group-hover\:scale-105 {
     transform: scale(1.04);
-    transition: transform 0.9s $ease-ultra-silk;
+    transition: transform 1.5s $ease-ultra-silk;
   }
 }
 
 img {
-  transition: transform 0.8s $ease-ultra-silk, filter 0.8s $ease-ultra-silk;
+  transition: transform 1.2s $ease-ultra-silk, filter 1.2s $ease-ultra-silk;
 
   &:hover {
     transform: scale(1.02);
@@ -232,9 +232,9 @@ img {
   }
 }
 
-/* ── Card Transitions (SILK HOVER) ────────────────────────── */
+/* ── Card Transitions (SUPER LENTO) ───────────────────────── */
 .card, [class*="card"], [class*="service"] {
-  transition: all 0.9s $ease-ultra-silk;
+  transition: all 1.5s $ease-ultra-silk;
 
   &:hover {
     transform: translateY(-3px);
@@ -245,29 +245,29 @@ img {
 /* ── Link Hover Effects ─────────────────────────────────────– */
 a:not([class]) {
   position: relative;
-  transition: color 0.8s $ease-ultra-silk;
+  transition: color 1.2s $ease-ultra-silk;
 
   &:hover {
     color: #556B2F;
   }
 }
 
-/* ── Form Elements Smooth ───────────────────────────────────– */
+/* ── Form Elements SUPER LENTO ──────────────────────────────– */
 input:not([type="radio"]):not([type="checkbox"]),
 textarea,
 select {
-  transition: border-color 0.8s $ease-ultra-silk,
-              box-shadow 0.8s $ease-ultra-silk,
-              background-color 0.8s $ease-ultra-silk;
+  transition: border-color 1.2s $ease-ultra-silk,
+              box-shadow 1.2s $ease-ultra-silk,
+              background-color 1.2s $ease-ultra-silk;
 }
 
-/* ── Shadow & Color Smooth ──────────────────────────────────– */
+/* ── Shadow & Color SUPER LENTO ──────────────────────────────– */
 [class*="shadow"] {
-  transition: box-shadow 0.8s $ease-ultra-silk;
+  transition: box-shadow 1.2s $ease-ultra-silk;
 }
 
 [class*="bg-"] {
-  transition: background-color 0.8s $ease-ultra-silk;
+  transition: background-color 1.2s $ease-ultra-silk;
 }
 
 /* ── Smooth Scroll Behavior ──────────────────────────────────– */
