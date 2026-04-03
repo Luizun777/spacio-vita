@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavbarComponent }      from './components/navbar/navbar';
 import { HeroComponent }        from './components/hero/hero';
-import { NutritionComponent }   from './components/nutrition/nutrition';
 import { MedicineComponent }    from './components/medicine/medicine';
 import { SpaComponent }         from './components/spa/spa';
 import { TestimonialsComponent } from './components/testimonials/testimonials';
@@ -15,7 +14,6 @@ import { PreciosComponent }     from './components/precios/precios';
   imports: [
     NavbarComponent,
     HeroComponent,
-    NutritionComponent,
     MedicineComponent,
     SpaComponent,
     TestimonialsComponent,

@@ -88,15 +88,6 @@ export class PreciosComponent {
       ],
     },
     {
-      name: 'Tratamientos específicos',
-      services: [
-        { name: 'Levantamiento de glúteos', price: 1500, promo: '3x2' },
-        { name: 'Aclaramiento de axila', price: 999 },
-        { name: 'Retiro de verrugas', price: 500 },
-        { name: 'Lavado de oídos', price: 500 },
-      ],
-    },
-    {
       name: 'Otros',
       services: [
         { name: 'Sueroterapia revitalizante', price: 999 },
