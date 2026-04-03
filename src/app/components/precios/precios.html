@@ -1,45 +1,45 @@
-<section id="precios" class="py-32 bg-surface-container-low">
-  <div class="max-w-screen-2xl mx-auto px-8">
+<section id="precios" class="py-16 md:py-32 bg-surface-container-low">
+  <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-8">
 
     <!-- Header -->
-    <div class="text-center mb-16">
+    <div class="text-center mb-8 md:mb-16">
       <span class="text-primary font-bold tracking-widest uppercase text-xs">TARIFAS</span>
-      <h2 class="text-5xl font-bold mt-4 mb-6">Servicios &amp; Precios</h2>
-      <p class="text-on-surface-variant text-lg max-w-2xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 md:mt-4 mb-3 md:mb-6">Servicios &amp; Precios</h2>
+      <p class="text-on-surface-variant text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2">
         Tratamientos personalizados para tu bienestar físico y emocional.
       </p>
     </div>
 
     <!-- Categories grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
       @for (category of categories; track category.name) {
-        <div class="bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm">
+        <div class="bg-surface-container-lowest rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
 
           <!-- Category image -->
           @if (category.image) {
             <img
               [src]="category.image"
               [alt]="category.name"
-              class="w-full h-48 object-cover">
+              class="w-full h-32 sm:h-40 md:h-48 object-cover">
           }
 
           <!-- Category header -->
-          <div class="bg-primary-container px-6 py-4">
-            <h3 class="text-on-primary-container font-bold text-lg font-headline">{{ category.name }}</h3>
+          <div class="bg-primary-container px-4 sm:px-6 py-3 sm:py-4">
+            <h3 class="text-on-primary-container font-bold text-base sm:text-lg font-headline">{{ category.name }}</h3>
           </div>
 
           <!-- Services list -->
           <ul class="divide-y divide-surface-variant">
             @for (service of category.services; track service.name) {
-              <li class="px-6 py-4">
-                <div class="flex items-start justify-between gap-4">
+              <li class="px-3 sm:px-4 md:px-6 py-3 sm:py-4">
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-3">
 
                   <!-- Name + description -->
                   <div class="flex-1 min-w-0">
-                    <div class="flex items-center gap-2 flex-wrap">
-                      <span class="font-medium text-on-surface text-sm">{{ service.name }}</span>
+                    <div class="flex items-center gap-1 sm:gap-2 flex-wrap">
+                      <span class="font-medium text-on-surface text-xs sm:text-sm">{{ service.name }}</span>
                       @if (service.promo) {
-                        <span class="text-xs bg-primary text-on-primary px-2 py-0.5 rounded-full font-bold shrink-0">
+                        <span class="text-xs bg-primary text-on-primary px-2 py-0.5 rounded-full font-bold shrink-0 whitespace-nowrap">
                           {{ service.promo }}
                         </span>
                       }
@@ -50,9 +50,9 @@
                   </div>
 
                   <!-- Price -->
-                  <div class="text-right shrink-0">
+                  <div class="text-right sm:text-right shrink-0 mt-1 sm:mt-0">
                     @if (service.price) {
-                      <span class="font-bold text-primary">${{ service.price }}</span>
+                      <span class="font-bold text-primary text-sm sm:text-base">${{ service.price }}</span>
                     }
                     @if (service.original_price) {
                       <span class="text-xs text-on-surface-variant line-through block">${{ service.original_price }}</span>
