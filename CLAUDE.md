@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Centro Bienestar Integral** is a single-page wellness center website built with Angular 21. It's a landing page showcasing different wellness services (nutrition, medicine, spa, testimonials, and contact). The app uses a component-based architecture with standalone components (Angular's latest pattern, not NgModules).
+**Spacio Vita** is a single-page wellness center website built with Angular 21. It's a landing page showcasing different wellness services (nutrition, medicine, spa, testimonials, and contact). The app uses a component-based architecture with standalone components (Angular's latest pattern, not NgModules).
 
 ## Key Technologies
 
