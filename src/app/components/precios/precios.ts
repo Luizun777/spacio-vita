@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 interface Service {
   name: string;
@@ -16,7 +17,7 @@ interface Category {
 
 @Component({
   selector: 'app-precios',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './precios.html',
   styleUrl: './precios.scss',
 })
