@@ -60,66 +60,91 @@ h1, h2, h3, h4 {
   color: #3E5219;
 }
 
-/* ── Custom Animations ──────────────────────────────────────── */
+/* ── Custom Animations (Smooth & Fluid) ─────────────────────── */
+
+/* Smooth cubic-bezier easing for natural motion */
+$ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+$ease-elastic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
 @keyframes fadeIn {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
   }
 }
 
 @keyframes slideInUp {
-  from {
+  0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
-  to {
+  60% {
+    opacity: 0.8;
+    transform: translateY(-5px);
+  }
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
 @keyframes slideInDown {
-  from {
+  0% {
     opacity: 0;
-    transform: translateY(-30px);
+    transform: translateY(-40px);
   }
-  to {
+  60% {
+    opacity: 0.8;
+    transform: translateY(5px);
+  }
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
 @keyframes slideInLeft {
-  from {
+  0% {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateX(-40px);
   }
-  to {
+  60% {
+    opacity: 0.8;
+    transform: translateX(5px);
+  }
+  100% {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
 @keyframes slideInRight {
-  from {
+  0% {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(40px);
   }
-  to {
+  60% {
+    opacity: 0.8;
+    transform: translateX(-5px);
+  }
+  100% {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
 @keyframes scaleIn {
-  from {
+  0% {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.9);
   }
-  to {
+  50% {
+    opacity: 0.7;
+  }
+  100% {
     opacity: 1;
     transform: scale(1);
   }
@@ -129,8 +154,14 @@ h1, h2, h3, h4 {
   0%, 100% {
     transform: translateY(0px);
   }
+  25% {
+    transform: translateY(-8px);
+  }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-12px);
+  }
+  75% {
+    transform: translateY(-6px);
   }
 }
 
@@ -138,68 +169,122 @@ h1, h2, h3, h4 {
   0%, 100% {
     opacity: 1;
   }
+  25% {
+    opacity: 0.9;
+  }
   50% {
-    opacity: 0.8;
+    opacity: 0.75;
+  }
+  75% {
+    opacity: 0.9;
   }
 }
 
-/* ── Animation Classes ──────────────────────────────────────── */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(85, 107, 47, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(85, 107, 47, 0.3);
+  }
+}
+
+/* ── Animation Classes (Smooth) ─────────────────────────────── */
 .animate-fade-in {
-  animation: fadeIn 0.6s ease-out;
+  animation: fadeIn 0.8s $ease-smooth forwards;
 }
 
 .animate-slide-up {
-  animation: slideInUp 0.6s ease-out;
+  animation: slideInUp 0.9s $ease-smooth forwards;
 }
 
 .animate-slide-down {
-  animation: slideInDown 0.6s ease-out;
+  animation: slideInDown 0.9s $ease-smooth forwards;
 }
 
 .animate-slide-left {
-  animation: slideInLeft 0.6s ease-out;
+  animation: slideInLeft 0.9s $ease-smooth forwards;
 }
 
 .animate-slide-right {
-  animation: slideInRight 0.6s ease-out;
+  animation: slideInRight 0.9s $ease-smooth forwards;
 }
 
 .animate-scale-in {
-  animation: scaleIn 0.6s ease-out;
+  animation: scaleIn 0.8s $ease-elastic forwards;
 }
 
 .animate-float {
-  animation: float 3s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
 }
 
 .animate-pulse-slow {
-  animation: pulse-slow 2s ease-in-out infinite;
+  animation: pulse-slow 3s ease-in-out infinite;
 }
 
-/* ── Staggered Animations ─────────────────────────────────── */
-.animate-stagger-1 { animation-delay: 0.1s; }
-.animate-stagger-2 { animation-delay: 0.2s; }
-.animate-stagger-3 { animation-delay: 0.3s; }
-.animate-stagger-4 { animation-delay: 0.4s; }
-.animate-stagger-5 { animation-delay: 0.5s; }
-.animate-stagger-6 { animation-delay: 0.6s; }
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
 
-/* ── Smooth Transitions ────────────────────────────────────── */
+/* ── Staggered Animations (Optimized) ─────────────────────── */
+.animate-stagger-1 { animation-delay: 0.05s; }
+.animate-stagger-2 { animation-delay: 0.12s; }
+.animate-stagger-3 { animation-delay: 0.19s; }
+.animate-stagger-4 { animation-delay: 0.26s; }
+.animate-stagger-5 { animation-delay: 0.33s; }
+.animate-stagger-6 { animation-delay: 0.40s; }
+
+/* ── Smooth Transitions (Enhanced) ────────────────────────── */
 button, a, [role="button"] {
-  transition: all 0.3s ease-out;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* ── Hover Effects ────────────────────────────────────────── */
+input, textarea, select {
+  transition: all 0.35s $ease-smooth;
+
+  &:focus {
+    transform: scale(1.01);
+  }
+}
+
+/* ── Hover Effects (Fluid) ──────────────────────────────── */
 .group:hover {
   .group-hover\:scale-105 {
     transform: scale(1.05);
+    transition: transform 0.4s $ease-smooth;
   }
 }
 
 img {
-  transition: transform 0.3s ease-out;
+  transition: transform 0.4s $ease-smooth, filter 0.4s $ease-smooth;
 
   &:hover {
-    transform: scale(1.03);
+    transform: scale(1.04);
+    filter: brightness(1.05);
   }
+}
+
+/* ── Card Transitions ───────────────────────────────────────── */
+.card, [class*="card"], [class*="service"] {
+  transition: all 0.4s $ease-smooth;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(85, 107, 47, 0.15);
+  }
+}
+
+/* ── Link Hover Effects ──────────────────────────────────────── */
+a:not([class]) {
+  position: relative;
+  transition: color 0.3s $ease-smooth;
+
+  &:hover {
+    color: #556B2F;
+  }
+}
+
+/* ── Smooth Scroll Behavior ──────────────────────────────────– */
+html {
+  scroll-behavior: smooth;
 }
