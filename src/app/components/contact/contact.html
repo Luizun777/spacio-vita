@@ -39,7 +39,7 @@
         </div>
       </div>
 
-      <!-- Contact form -->
+      <!-- Contact CTA -->
       <div class="lg:w-2/3">
         <div class="bg-surface-container-low rounded-[3rem] p-12 md:p-16 relative overflow-hidden">
 
@@ -47,75 +47,51 @@
           <div class="relative z-10 text-center mb-12">
             <h2 class="text-4xl font-bold mb-4">Contáctanos</h2>
             <p class="text-on-surface-variant">
-              Estamos aquí para responder tus preguntas y agendar tu primera visita.
+              Estamos aquí para responder tus preguntas y agendar tu primera visita. Comunícate con nosotros por WhatsApp.
             </p>
           </div>
 
-          <!-- Success message -->
-          @if (submitted) {
-            <div class="relative z-10 text-center py-12">
-              <span class="material-symbols-outlined text-primary text-6xl mb-4 block">check_circle</span>
-              <h3 class="text-2xl font-bold text-primary mb-2">¡Solicitud enviada!</h3>
-              <p class="text-on-surface-variant">Nos pondremos en contacto contigo pronto.</p>
+          <!-- Contact Options -->
+          <div class="relative z-10 space-y-6">
+
+            <!-- WhatsApp Button -->
+            <a
+              [href]="getWhatsappLink()"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-between w-full bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 hover:border-green-400 rounded-2xl p-6 transition-all hover:shadow-lg hover:scale-105">
+              <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-green-600 text-4xl">whatsapp</span>
+                <div class="text-left">
+                  <h3 class="font-bold text-green-900 text-lg">Escríbenos por WhatsApp</h3>
+                  <p class="text-sm text-green-700">Respuesta rápida y directa</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-green-600">arrow_forward</span>
+            </a>
+
+            <!-- Divider -->
+            <div class="flex items-center gap-4 text-on-surface-variant">
+              <div class="flex-1 h-px bg-surface-variant"></div>
+              <span class="text-sm">O también puedes</span>
+              <div class="flex-1 h-px bg-surface-variant"></div>
             </div>
-          }
 
-          <!-- Form -->
-          @if (!submitted) {
-            <form class="relative z-10 space-y-6" (ngSubmit)="onSubmit()" #contactForm="ngForm">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label class="block text-sm font-semibold mb-2 ml-1">Nombre Completo</label>
-                  <input
-                    class="w-full bg-white/60 border-none rounded-xl focus:ring-2 focus:ring-primary/30 py-4 px-6"
-                    type="text"
-                    placeholder="Ej. Ana García"
-                    [(ngModel)]="form.nombre"
-                    name="nombre"
-                    required>
-                </div>
-                <div>
-                  <label class="block text-sm font-semibold mb-2 ml-1">Correo Electrónico</label>
-                  <input
-                    class="w-full bg-white/60 border-none rounded-xl focus:ring-2 focus:ring-primary/30 py-4 px-6"
-                    type="email"
-                    placeholder="ana@ejemplo.com"
-                    [(ngModel)]="form.email"
-                    name="email"
-                    required>
+            <!-- Phone Button -->
+            <a
+              [href]="getPhoneLink()"
+              class="flex items-center justify-between w-full bg-gradient-to-r from-blue-50 to-cyan-50 border-2 border-blue-200 hover:border-blue-400 rounded-2xl p-6 transition-all hover:shadow-lg hover:scale-105">
+              <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-blue-600 text-4xl">call</span>
+                <div class="text-left">
+                  <h3 class="font-bold text-blue-900 text-lg">Llamanos</h3>
+                  <p class="text-sm text-blue-700">+52 3576 0433</p>
                 </div>
               </div>
+              <span class="material-symbols-outlined text-blue-600">arrow_forward</span>
+            </a>
 
-              <div>
-                <label class="block text-sm font-semibold mb-2 ml-1">Servicio de Interés</label>
-                <select
-                  class="w-full bg-white/60 border-none rounded-xl focus:ring-2 focus:ring-primary/30 py-4 px-6"
-                  [(ngModel)]="form.servicio"
-                  name="servicio">
-                  @for (s of servicios; track s) {
-                    <option [value]="s">{{ s }}</option>
-                  }
-                </select>
-              </div>
-
-              <div>
-                <label class="block text-sm font-semibold mb-2 ml-1">Mensaje</label>
-                <textarea
-                  class="w-full bg-white/60 border-none rounded-xl focus:ring-2 focus:ring-primary/30 py-4 px-6"
-                  rows="4"
-                  placeholder="¿Cómo podemos ayudarte?"
-                  [(ngModel)]="form.mensaje"
-                  name="mensaje">
-                </textarea>
-              </div>
-
-              <button
-                type="submit"
-                class="w-full bg-primary text-on-primary py-5 rounded-full text-lg font-bold hover:opacity-95 transition-all">
-                Enviar Solicitud
-              </button>
-            </form>
-          }
+          </div>
 
         </div>
       </div>
