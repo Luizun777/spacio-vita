@@ -1,4 +1,8 @@
-# CentroBienestarIntegral
+# Spacio Vita
+
+A single-page wellness center website built with Angular 21.
+
+**Live:** https://spacio-vita.vercel.app/
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.6.
 
