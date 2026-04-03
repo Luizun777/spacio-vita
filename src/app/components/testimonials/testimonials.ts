@@ -19,7 +19,7 @@ export class TestimonialsComponent {
   testimonials: Testimonial[] = [
     {
       quote: 'Excelente lugar, todos los tratamientos que me he hecho me han encantado. Y la Doctora Lourdes es muy profesional y he visto resultados sorprendentes.',
-      name: 'Cliente de Google Maps',
+      name: 'Marisol',
       role: 'Todos los servicios',
       avatarColor: 'bg-primary-fixed',
       mapsUrl: 'https://goo.gl/maps/Mp3sBnbvg5MF9PwC6',
