@@ -16,12 +16,20 @@
           <!-- Quote -->
           <p class="text-on-surface-variant italic mb-8">"{{ t.quote }}"</p>
           <!-- Author -->
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-full" [class]="t.avatarColor"></div>
-            <div>
-              <h4 class="font-bold text-sm text-[#3E5219]">{{ t.name }}</h4>
-              <p class="text-xs text-on-surface-variant">{{ t.role }}</p>
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4 flex-1">
+              <div class="w-12 h-12 rounded-full" [class]="t.avatarColor"></div>
+              <div>
+                <h4 class="font-bold text-sm text-[#3E5219]">{{ t.name }}</h4>
+                <p class="text-xs text-on-surface-variant">{{ t.role }}</p>
+              </div>
             </div>
+            @if (t.mapsUrl) {
+              <a [href]="t.mapsUrl" target="_blank" rel="noopener noreferrer" class="text-xs text-primary hover:text-primary-container transition-colors flex items-center gap-1 whitespace-nowrap">
+                Ver en Maps
+                <span class="material-symbols-outlined text-sm">open_in_new</span>
+              </a>
+            }
           </div>
         </div>
       }
