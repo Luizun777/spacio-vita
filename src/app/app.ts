@@ -12,7 +12,6 @@ import { PreciosComponent }          from './components/precios/precios';
 import { TeamComponent }             from './components/team/team';
 import { FAQComponent }              from './components/faq/faq';
 import { TrustBadgesComponent }      from './components/trust-badges/trust-badges';
-import { NewsletterComponent }       from './components/newsletter/newsletter';
 import { WhatsappFloatComponent }    from './components/whatsapp-float/whatsapp-float';
 
 @Component({
@@ -27,7 +26,6 @@ import { WhatsappFloatComponent }    from './components/whatsapp-float/whatsapp-
     TestimonialsComponent,
     TrustBadgesComponent,
     FAQComponent,
-    NewsletterComponent,
     ContactComponent,
     FooterComponent,
     MobileNavComponent,
