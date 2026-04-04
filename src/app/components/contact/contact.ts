@@ -159,4 +159,11 @@ export class ContactComponent implements AfterViewInit {
     // Aquí se conectaría con el servicio backend
     console.log('Formulario enviado:', this.form);
   }
+
+  getWhatsappLink(): string {
+    // Número: 55 3576 0433 → formato internacional: +52 55 3576 0433
+    const phoneNumber = '5553576433';
+    const message = encodeURIComponent('Hola, me gustaría conocer más sobre los servicios de Spacio Vita.');
+    return `https://wa.me/${phoneNumber}?text=${message}`;
+  }
 }

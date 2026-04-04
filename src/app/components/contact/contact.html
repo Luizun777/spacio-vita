@@ -63,64 +63,41 @@
         </div>
       </div>
 
-      <!-- Form -->
-      <div class="contact-form lg:col-span-3 bg-[#160B0D] border border-white/5 border-l-0 p-10 lg:p-12 opacity-0">
+      <!-- WhatsApp CTA -->
+      <div class="contact-form lg:col-span-3 bg-[#160B0D] border border-white/5 border-l-0 p-10 lg:p-12 opacity-0 flex flex-col justify-center">
         <div class="h-px w-full bg-gradient-to-r from-[#FFBB00] to-transparent mb-8"></div>
-        <h3 class="font-headline text-xl text-white mb-8">Envíanos un mensaje</h3>
+        <h3 class="font-headline text-2xl lg:text-3xl text-white mb-4">¿Listo para transformarte?</h3>
+        <p class="text-white/60 mb-10 text-sm lg:text-base leading-relaxed">
+          Contáctanos por WhatsApp y agenda tu cita hoy mismo. Nuestro equipo está listo para ayudarte.
+        </p>
 
-        @if (submitted) {
-          <div class="text-center py-16">
-            <span class="material-symbols-outlined text-[#FFBB00] text-5xl block mb-4">check_circle</span>
-            <p class="font-headline text-xl text-white mb-2">¡Mensaje enviado!</p>
-            <p class="text-white/40 text-sm">Nos pondremos en contacto pronto.</p>
+        <!-- WhatsApp Button -->
+        <a [href]="getWhatsappLink()"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="contact-submit opacity-0 inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20BA5A] text-white py-4 px-8 rounded-lg font-bold text-base tracking-wide uppercase transition-all duration-300 hover:shadow-lg hover:shadow-[#25D366]/30 active:scale-95 w-full">
+          <span class="material-symbols-outlined text-2xl">whatsapp</span>
+          <span>Chatear por WhatsApp</span>
+        </a>
+
+        <!-- Social Links -->
+        <div class="mt-12 pt-8 border-t border-white/10">
+          <p class="text-white/40 text-xs uppercase tracking-widest mb-6">También nos encuentras en:</p>
+          <div class="flex items-center gap-4 justify-start">
+            <a href="https://www.instagram.com/spaciovita.cdmx?igsh=MTZqdTF0aTJtdWc3cA=="
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#FE5D5D] to-[#D92E7F] rounded-full hover:shadow-lg hover:shadow-[#D92E7F]/30 transition-all duration-300 hover:scale-110">
+              <span class="material-symbols-outlined text-white text-xl">photo_camera</span>
+            </a>
+            <a href="https://www.facebook.com/share/1CBC2whhex/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-flex items-center justify-center w-12 h-12 bg-[#1877F2] rounded-full hover:shadow-lg hover:shadow-[#1877F2]/30 transition-all duration-300 hover:scale-110">
+              <span class="material-symbols-outlined text-white text-xl">facebook</span>
+            </a>
           </div>
-        }
-
-        @if (!submitted) {
-          <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="space-y-5">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <div class="contact-input opacity-0">
-                <label class="block text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Nombre</label>
-                <input type="text" [(ngModel)]="form.nombre" name="nombre" required
-                  placeholder="Ana García"
-                  class="w-full bg-transparent border border-white/10 text-white text-sm px-4 py-3
-                         placeholder:text-white/20 focus:border-[#FFBB00]/60 focus:outline-none focus:ring-0
-                         transition-colors duration-200">
-              </div>
-              <div class="contact-input opacity-0">
-                <label class="block text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Email</label>
-                <input type="email" [(ngModel)]="form.email" name="email" required
-                  placeholder="ana@ejemplo.com"
-                  class="w-full bg-transparent border border-white/10 text-white text-sm px-4 py-3
-                         placeholder:text-white/20 focus:border-[#FFBB00]/60 focus:outline-none focus:ring-0
-                         transition-colors duration-200">
-              </div>
-            </div>
-            <div class="contact-input opacity-0">
-              <label class="block text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Servicio</label>
-              <select [(ngModel)]="form.servicio" name="servicio"
-                class="w-full bg-[#0D0608] border border-white/10 text-white/70 text-sm px-4 py-3
-                       focus:border-[#FFBB00]/60 focus:outline-none focus:ring-0 transition-colors duration-200">
-                @for (s of servicios; track s) {
-                  <option [value]="s">{{ s }}</option>
-                }
-              </select>
-            </div>
-            <div class="contact-input opacity-0">
-              <label class="block text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Mensaje</label>
-              <textarea [(ngModel)]="form.mensaje" name="mensaje" rows="4"
-                placeholder="¿Cómo podemos ayudarte?"
-                class="w-full bg-transparent border border-white/10 text-white text-sm px-4 py-3
-                       placeholder:text-white/20 focus:border-[#FFBB00]/60 focus:outline-none focus:ring-0
-                       transition-colors duration-200 resize-none"></textarea>
-            </div>
-            <button type="submit" class="contact-submit opacity-0 w-full bg-[#FFBB00] text-[#0D0608] py-4
-                          text-xs font-bold tracking-[0.3em] uppercase
-                          hover:bg-white transition-colors duration-300 mt-2">
-              Enviar Solicitud
-            </button>
-          </form>
-        }
+        </div>
       </div>
     </div>
 
