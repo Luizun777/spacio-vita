@@ -34,17 +34,30 @@ export class PreciosComponent implements OnInit, AfterViewInit {
   loaded = false;
 
   ngOnInit(): void {
+    // Try loading from /catalog.json first
     this.http.get<{ categories: Category[] }>('/catalog.json').subscribe({
       next: (data) => {
+        console.log('✓ Catálogo cargado:', data.categories.length, 'categorías');
         this.categories = data.categories;
         this.loaded = true;
-        // Re-run scroll trigger after data loads
         setTimeout(() => this.animateCards(), 100);
       },
       error: (err) => {
-        console.error('Error cargando catalog.json:', err);
-        // Fallback: mostrar datos vacíos pero marcar como cargado
-        this.loaded = true;
+        console.error('✗ Error cargando /catalog.json:', err);
+        console.log('Intentando ruta alternativa...');
+        // Try alternative path
+        this.http.get<{ categories: Category[] }>('catalog.json').subscribe({
+          next: (data) => {
+            console.log('✓ Catálogo cargado desde ruta alternativa:', data.categories.length, 'categorías');
+            this.categories = data.categories;
+            this.loaded = true;
+            setTimeout(() => this.animateCards(), 100);
+          },
+          error: (err2) => {
+            console.error('✗ Error en ruta alternativa:', err2);
+            this.loaded = true;
+          },
+        });
       },
     });
   }
