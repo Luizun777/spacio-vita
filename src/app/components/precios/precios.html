@@ -1,55 +1,56 @@
-<section id="precios" class="py-32 bg-[#0D0608]">
-  <div class="max-w-screen-xl mx-auto px-8">
+<section id="precios" class="py-20 md:py-32 bg-[#0D0608]">
+  <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-8">
 
     <!-- Section header -->
-    <div class="precios-header text-center mb-20 opacity-0">
-      <div class="flex items-center justify-center gap-6 mb-6">
-        <div class="h-px flex-1 max-w-24 bg-gradient-to-r from-transparent to-[#FFBB00]/40"></div>
-        <span class="text-[#FFBB00] text-xs tracking-[0.4em] uppercase font-medium">Nuestros Servicios</span>
-        <div class="h-px flex-1 max-w-24 bg-gradient-to-l from-transparent to-[#FFBB00]/40"></div>
+    <div class="precios-header text-center mb-16 md:mb-24 opacity-0">
+      <div class="flex items-center justify-center gap-4 md:gap-6 mb-4 md:mb-6">
+        <div class="h-px flex-1 max-w-16 md:max-w-24 bg-gradient-to-r from-transparent to-[#FFBB00]/40"></div>
+        <span class="text-[#FFBB00] text-xs tracking-[0.4em] uppercase font-medium whitespace-nowrap">Nuestros Servicios</span>
+        <div class="h-px flex-1 max-w-16 md:max-w-24 bg-gradient-to-l from-transparent to-[#FFBB00]/40"></div>
       </div>
-      <h2 class="font-headline text-5xl md:text-6xl text-white mb-4">
+      <h2 class="font-headline text-4xl sm:text-5xl md:text-6xl text-white mb-3 md:mb-6 leading-tight">
         Catálogo de <span class="text-[#FFBB00] italic">Tratamientos</span>
       </h2>
-      <p class="text-white/50 max-w-xl mx-auto leading-relaxed">
+      <p class="text-white/60 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed px-4">
         Servicios personalizados diseñados para tu bienestar físico y emocional.
       </p>
     </div>
 
     <!-- Categories grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-      @for (category of categories; track category.name) {
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      @for (category of categories; track category.name; let i = $index) {
         <div class="precio-card group bg-[#160B0D] border border-white/10 overflow-hidden opacity-0
-                    hover:border-[#FFBB00]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#FFBB00]/10 rounded-xl">
+                    hover:border-[#FFBB00]/40 transition-all duration-500 hover:shadow-2xl hover:shadow-[#FFBB00]/15 rounded-2xl"
+             [ngClass]="'animate-stagger-' + ((i % 6) + 1)">
 
           <!-- Image with overlay -->
-          <div class="relative h-56 overflow-hidden">
+          <div class="relative h-48 sm:h-56 overflow-hidden">
             <img [src]="category.image" [alt]="category.name"
-                 class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105
+                 class="w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-110
                         transition-all duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#160B0D] via-[#160B0D]/30 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#160B0D] via-[#160B0D]/40 to-transparent"></div>
             <!-- Icon + category name overlay -->
-            <div class="absolute bottom-5 left-6 flex items-center gap-3">
-              <span class="material-symbols-outlined text-[#FFBB00] text-3xl">{{ category.icon }}</span>
-              <h3 class="font-headline text-2xl text-white font-bold">{{ category.name }}</h3>
+            <div class="absolute inset-0 flex flex-col justify-end p-5 sm:p-6">
+              <div class="flex items-start gap-3 mb-2">
+                <span class="material-symbols-outlined text-[#FFBB00] text-3xl sm:text-4xl shrink-0">{{ category.icon }}</span>
+              </div>
+              <h3 class="font-headline text-xl sm:text-2xl text-white font-bold group-hover:text-[#FFBB00] transition-colors">{{ category.name }}</h3>
             </div>
-            <!-- Gold left border accent -->
-            <div class="absolute top-0 left-0 w-0.5 h-full bg-[#FFBB00] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
 
           <!-- Description -->
-          <p class="text-white/60 text-sm px-6 py-4 border-b border-white/10 leading-relaxed">
+          <p class="text-white/70 text-sm px-5 sm:px-6 py-3 sm:py-4 border-b border-white/10 leading-relaxed">
             {{ category.description }}
           </p>
 
           <!-- Services list -->
-          <ul class="divide-y divide-white/10">
+          <div class="max-h-80 overflow-y-auto divide-y divide-white/10">
             @for (service of category.services; track service.name) {
-              <li class="px-6 py-5 hover:bg-white/[0.05] transition-colors">
+              <div class="px-5 sm:px-6 py-4 sm:py-5 hover:bg-white/[0.03] transition-colors">
                 <div class="flex items-start justify-between gap-3 mb-1">
-                  <span class="text-white/90 text-sm font-medium leading-snug">{{ service.name }}</span>
+                  <span class="text-white/90 text-sm font-medium leading-snug flex-1">{{ service.name }}</span>
                   @if (service.promo) {
-                    <span class="shrink-0 text-[10px] bg-[#FFBB00] text-[#0D0608] px-2 py-0.5 font-bold tracking-wide uppercase">
+                    <span class="shrink-0 text-[10px] bg-[#FFBB00] text-[#0D0608] px-2 py-1 font-bold tracking-wide uppercase whitespace-nowrap">
                       {{ service.promo }}
                     </span>
                   }
@@ -59,7 +60,7 @@
                 }
                 <div class="flex items-center gap-3 mt-2">
                   @if (service.price) {
-                    <span class="text-[#FFBB00] font-bold text-lg">${{ service.price }}</span>
+                    <span class="text-[#FFBB00] font-bold text-base sm:text-lg">${{ service.price }}</span>
                   }
                   @if (service.original_price) {
                     <span class="text-white/30 text-xs line-through">${{ service.original_price }}</span>
@@ -68,22 +69,22 @@
                     <span class="text-white/40 text-xs italic">Consultar precio</span>
                   }
                 </div>
-              </li>
+              </div>
             }
-          </ul>
+          </div>
 
         </div>
       }
     </div>
 
     <!-- CTA after catalog -->
-    <div class="text-center mt-16">
-      <p class="text-white/40 text-sm mb-6 tracking-wide">¿Tienes dudas sobre algún tratamiento?</p>
+    <div class="text-center mt-12 md:mt-16">
+      <p class="text-white/50 text-sm md:text-base mb-6 md:mb-8 tracking-wide">¿Tienes dudas sobre algún tratamiento?</p>
       <a href="#contacto"
-         class="inline-flex items-center gap-3 border border-[#FFBB00]/40 text-[#FFBB00] px-8 py-3
-                text-xs tracking-[0.2em] uppercase hover:bg-[#FFBB00] hover:text-[#0D0608] transition-all duration-300">
+         class="inline-flex items-center justify-center gap-3 border border-[#FFBB00]/50 text-[#FFBB00] px-6 md:px-8 py-3 md:py-4
+                text-xs md:text-sm tracking-[0.2em] uppercase font-medium hover:bg-[#FFBB00] hover:text-[#0D0608] transition-all duration-300 hover:shadow-lg hover:shadow-[#FFBB00]/20">
         <span>Agenda una consulta</span>
-        <span>→</span>
+        <span class="material-symbols-outlined text-base">arrow_forward</span>
       </a>
     </div>
 

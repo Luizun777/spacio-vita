@@ -53,26 +53,30 @@ export class PreciosComponent implements OnInit, AfterViewInit {
 
     gsap.fromTo(
       section.querySelector('.precios-header'),
-      { opacity: 0, y: 30 },
+      { opacity: 0, y: 40 },
       {
         opacity: 1,
         y: 0,
-        duration: 0.8,
-        ease: 'power2.out',
-        scrollTrigger: { trigger: section, start: 'top 80%', once: true },
+        duration: 0.9,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: section, start: 'top 85%', once: true },
       }
     );
 
     gsap.fromTo(
       section.querySelectorAll('.precio-card'),
-      { opacity: 0, y: 40 },
+      { opacity: 0, y: 50, scale: 0.95 },
       {
         opacity: 1,
         y: 0,
-        duration: 0.7,
-        ease: 'power2.out',
-        stagger: 0.1,
-        scrollTrigger: { trigger: section, start: 'top 75%', once: true },
+        scale: 1,
+        duration: 0.8,
+        ease: 'power3.out',
+        stagger: {
+          amount: 0.6,
+          from: 'start',
+        },
+        scrollTrigger: { trigger: section, start: 'top 80%', once: true },
       }
     );
   }
