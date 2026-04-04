@@ -14,14 +14,14 @@ interface NavItem {
   styleUrl: './mobile-nav.scss',
 })
 export class MobileNavComponent {
-  activeItem = signal<string>('nutricion');
+  activeItem = signal<string>('medicina');
 
   items: NavItem[] = [
-    { id: 'nutricion', icon: 'nutrition',         label: 'Nutrición' },
-    { id: 'medicina',  icon: 'medical_services',  label: 'Medicina'  },
-    { id: 'spa',       icon: 'spa',               label: 'Spa & Estética' },
-    { id: 'precios',   icon: 'sell',              label: 'Precios'   },
-    { id: 'contacto',  icon: 'mail',              label: 'Contacto'  },
+    { id: 'medicina',   icon: 'medical_services',  label: 'Medicina'  },
+    { id: 'spa',        icon: 'spa',               label: 'Spa'       },
+    { id: 'servicios',  icon: 'dashboard',        label: 'Servicios' },
+    { id: 'precios',    icon: 'sell',             label: 'Precios'   },
+    { id: 'contacto',   icon: 'mail',             label: 'Contacto'  },
   ];
 
   scrollTo(id: string): void {

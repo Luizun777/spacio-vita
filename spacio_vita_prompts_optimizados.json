@@ -1,0 +1,71 @@
+{
+  "project": "Spacio Vita - Catálogo de Servicios",
+  "timestamp": "2026-04-02 22:03:20",
+  "stats": {
+    "total": 6,
+    "successful": 0,
+    "failed": 6
+  },
+  "results": [
+    {
+      "name": "Consultas",
+      "base_prompt": "Medical consultation room with doctor and patient, professional healthcare setting, clean and welcoming clinic",
+      "optimized_prompt": "\"A bright and airy medical consultation room with a warm beige color palette, illuminated by soft natural light pouring in through a large window with a subtle blind, and supplemented by warm table lamps, creating a cozy and inviting atmosphere. A middle-aged doctor with a kind smile and a stethoscope around their neck, sitting in a comfortable office chair, engaged in a empathetic conversation with a patient, who is sitting on a plush examination couch with a gentle gray fabric, adorned with a few carefully placed medical diagrams and a vase with fresh flowers on a wooden side table. The room is decorated with a mix of modern and traditional elements, including a large wooden desk, a bookshelf filled with medical textbooks, and a few pieces of calming artwork on the walls, creating a sense of balance and professionalism. The overall style is a blend of Scandinavian minimalism and classic healthcare design, evoking a sense of trust, comfort, and expertise. The composition is balanced and harmonious, with a clear sense of intimacy and",
+      "description": "Consultas médicas profesionales en Spacio Vita",
+      "status": "failed",
+      "error": "No se pudo generar con ninguno de los proveedores: ['openai', 'gemini', 'huggingface']",
+      "note": "Los prompts optimizados se guardaron para intentar después con otro proveedor",
+      "timestamp": "2026-04-02 22:02:58"
+    },
+    {
+      "name": "Faciales",
+      "base_prompt": "Professional facial treatment and skincare spa, beauty therapist applying skincare, luxury wellness center, relaxation atmosphere",
+      "optimized_prompt": "\"Sereno y lujoso spa de tratamientos faciales y cuidado de la piel, un terapeuta de belleza aplicando productos de cuidado de la piel de alta gama en un ambiente iluminado con luces cálidas y suaves, con una composición minimalista y elegante, inspirado en el estilo moderno y sofisticado de un centro de bienestar de cinco estrellas, evocando una atmósfera relajante y pacífica, con detalles de madera oscura y plantas verdes, y un fondo suave y desenfocado para enfatizar la serenidad y el lujo del momento, en un estilo de imagen hiperrealista y detallado, con texturas y reflejos realistas.\"",
+      "description": "Tratamientos faciales profesionales en spa de lujo",
+      "status": "failed",
+      "error": "No se pudo generar con ninguno de los proveedores: ['openai', 'gemini', 'huggingface']",
+      "note": "Los prompts optimizados se guardaron para intentar después con otro proveedor",
+      "timestamp": "2026-04-02 22:03:02"
+    },
+    {
+      "name": "Corporales",
+      "base_prompt": "Body massage therapy and body treatment spa, professional massage therapist with client, relaxation and wellness",
+      "optimized_prompt": "\"Calmante y sereno entorno de spa de tratamiento corporal con iluminación cálida y suave, un terapeuta profesional de masaje experto con un cliente relajado en una mesa de masaje de madera oscura, rodeado de plantas verdes exóticas y velas aromáticas, estilo minimalista y moderno con un toque de naturaleza, composición asimétrica con un enfoque en la conexión entre el terapeuta y el cliente, atmósfera tranquila y relajante con un aroma a aceites esenciales y sonidos suaves de agua corriente, alta calidad y detalles realistas, inspirado en la arquitectura de spa de lujo y la fotografía de bienestar y relajación.\"",
+      "description": "Tratamientos corporales profesionales con aparatología",
+      "status": "failed",
+      "error": "No se pudo generar con ninguno de los proveedores: ['openai', 'gemini', 'huggingface']",
+      "note": "Los prompts optimizados se guardaron para intentar después con otro proveedor",
+      "timestamp": "2026-04-02 22:03:06"
+    },
+    {
+      "name": "Depilación láser",
+      "base_prompt": "Professional laser hair removal clinic, modern beauty technology, safe and effective treatment room, dermatology clinic",
+      "optimized_prompt": "Una clínica de eliminación de vello láser profesional, con tecnología de belleza moderna, en un salón de tratamiento seguro y eficaz, equipado con instrumental médico de vanguardia y un ambiente sereno, iluminado por una luz suave y cálida que se filtra a través de grandes ventanas, con un estilo minimalista y elegante, y una atmósfera tranquilizadora que invita a la relajación, con detalles como mobiliario de diseño, plantas verdes y obras de arte contemporáneo en las paredes, en un entorno que combina innovación y bienestar, con un enfoque en la dermatología y el cuidado de la piel, y un toque de lujo y sofisticación en cada elemento, desde el piso de madera oscura hasta el techo alto y las cortinas de seda, creando un espacio donde la tecn",
+      "description": "Depilación láser profesional con tecnología moderna",
+      "status": "failed",
+      "error": "No se pudo generar con ninguno de los proveedores: ['openai', 'gemini', 'huggingface']",
+      "note": "Los prompts optimizados se guardaron para intentar después con otro proveedor",
+      "timestamp": "2026-04-02 22:03:12"
+    },
+    {
+      "name": "Masajes",
+      "base_prompt": "Therapeutic massage spa, professional massage therapist, hot stone massage, wellness and relaxation treatment",
+      "optimized_prompt": "\"Serenamente iluminada, una sala de spa de masajes terapéuticos con un terapeuta profesional de masajes realizando un tratamiento de masaje de piedras calientes, con la cámara enfocada en la zona de tratamiento, los colores cálidos y naturales de la madera y las plantas crean una atmósfera relajante y acogedora, el estilo es minimalista y moderno, con toques de elementos naturales, la iluminación es suave y cálida, con rayos de luz que se filtran a través de las cortinas, mientras el cliente se relaja en la mesa de masajes, rodeado de velas y aceites esenciales, la composición es intima y serena, con un enfoque en la conexión entre el terapeuta y el cliente, y la textura de las piedras calientes y los aceites se dest",
+      "description": "Masajes terapéuticos profesionales en spa de bienestar",
+      "status": "failed",
+      "error": "No se pudo generar con ninguno de los proveedores: ['openai', 'gemini', 'huggingface']",
+      "note": "Los prompts optimizados se guardaron para intentar después con otro proveedor",
+      "timestamp": "2026-04-02 22:03:16"
+    },
+    {
+      "name": "Psicología y Bienestar",
+      "base_prompt": "Psychology office therapy session, counselor with client, professional wellness coaching, mental health support",
+      "optimized_prompt": "Una sala de terapia iluminada cálidamente, con una decoración minimalista y sofisticada, donde un consejero sentado en una silla de cuero marrón escucha atentamente a su cliente, quien se encuentra recostado en un sofá de tela gris, con una ventana tras ellos que filtra la luz del atardecer, proyectando un suave resplandor anaranjado sobre la escena, en un ambiente de seriedad y empatía, con la presencia de algunas plantas verdes y una obra de arte abstracta en la pared, que refleja la calma y la serenidad del espacio, estilo fotográfico realista y detallado, con un enfoque en la composición y el uso de la luz para crear una atmósfera de introspección y apoyo, paleta de colores suaves y naturales, con matic",
+      "description": "Consultas de psicología y bienestar integral",
+      "status": "failed",
+      "error": "No se pudo generar con ninguno de los proveedores: ['openai', 'gemini', 'huggingface']",
+      "note": "Los prompts optimizados se guardaron para intentar después con otro proveedor",
+      "timestamp": "2026-04-02 22:03:20"
+    }
+  ]
+}

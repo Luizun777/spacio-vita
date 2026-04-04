@@ -1,0 +1,50 @@
+{
+  "description": "Prompts optimizados para generar imágenes profesionales con DALL-E 3. Generados con Groq. Usar cuando tengas presupuesto en OpenAI.",
+  "generated_date": "2026-04-03T03:35:00Z",
+  "generator": "Groq + claude-codex",
+  "prompts": [
+    {
+      "category": "Consultas",
+      "original": "Medical consultation room with doctor and patient, professional healthcare setting, clean and welcoming clinic",
+      "optimized": "Habitación de consulta médica iluminada con luz cálida y suave, con un doctor y un paciente en una conversación profesional, ambiente acogedor y limpio de una clínica de salud de primer nivel, mobiliario moderno, decoración minimalista y cálida",
+      "use": "Reemplazar image en precios.ts: Consultas"
+    },
+    {
+      "category": "Faciales",
+      "original": "Professional facial treatment and skincare spa, beauty therapist applying skincare, luxury wellness center, relaxation atmosphere",
+      "optimized": "Sala de tratamiento facial profesional y spa de cuidado de la piel de alta gama, una terapeuta de belleza aplicando productos de skincare premium a una cliente, ambiente de lujo y relajación con iluminación cálida, toallas blancas, ambiente spa de 5 estrellas",
+      "use": "Reemplazar image en precios.ts: Faciales"
+    },
+    {
+      "category": "Corporales",
+      "original": "Body massage therapy and body treatment spa, professional massage therapist with client, relaxation and wellness",
+      "optimized": "Una elegante sala de spa de lujo con iluminación cálida y suave, un terapeuta profesional de masaje trabajando en el cuerpo de un cliente, almohadas de espuma viscoelástica, velas aromáticas, ambiente de relajación total y bienestar",
+      "use": "Reemplazar image en precios.ts: Corporales"
+    },
+    {
+      "category": "Depilación láser",
+      "original": "Professional laser hair removal clinic, modern beauty technology, safe and effective treatment room, dermatology clinic",
+      "optimized": "Clínica de eliminación de pelo láser profesional, tecnología de belleza láser moderna de última generación, sala de tratamiento limpia y segura, equipo dermatológico de punta, luz LED azul, ambiente médico profesional de dermatología",
+      "use": "Reemplazar image en precios.ts: Depilación láser"
+    },
+    {
+      "category": "Masajes",
+      "original": "Therapeutic massage spa, professional massage therapist, hot stone massage, wellness and relaxation treatment",
+      "optimized": "Spa de masaje terapéutico de lujo, un terapeuta profesional realizando masaje con piedras calientes, cliente relajado en camilla de masaje, velas aromáticas, aceites de masaje premium, ambiente spa de bienestar total",
+      "use": "Reemplazar image en precios.ts: Masajes"
+    },
+    {
+      "category": "Psicología y Bienestar",
+      "original": "Psychology office therapy session, counselor with client, professional wellness coaching, mental health support",
+      "optimized": "Sesión de terapia en una oficina de psicología acogedora y luminosa, un psicólogo profesional escuchando atentamente a un cliente, ambiente de confianza y seguridad, decoración cálida, plantas verdes, ambiente de apoyo mental de calidad",
+      "use": "Reemplazar image en precios.ts: Psicología y Bienestar"
+    }
+  ],
+  "instructions": {
+    "step1": "Usar estos prompts cuando tengas presupuesto en OpenAI",
+    "step2": "Ejecutar: python generate_spacio_vita_images.py (en claude-codex)",
+    "step3": "Copiar las URLs generadas a precios.ts",
+    "step4": "Hacer push a main",
+    "notes": "Los prompts ya están optimizados por Groq, solo necesitas presupuesto de OpenAI DALL-E 3"
+  }
+}
