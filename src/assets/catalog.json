@@ -41,7 +41,7 @@
       "name": "Depilación Láser",
       "icon": "bolt",
       "description": "Resultados permanentes con la tecnología más avanzada",
-      "image": "https://images.unsplash.com/photo-1570242a10829-8b70e2b17ded?w=800&q=80",
+      "image": "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=800&q=80",
       "services": [
         { "name": "Cuerpo completo", "price": 12900, "promo": "2×1" },
         { "name": "Axila y bikini", "price": 999 },
