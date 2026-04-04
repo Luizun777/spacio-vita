@@ -34,7 +34,7 @@ export class PreciosComponent implements OnInit, AfterViewInit {
   loaded = false;
 
   ngOnInit(): void {
-    this.http.get<{ categories: Category[] }>('/assets/catalog.json').subscribe(data => {
+    this.http.get<{ categories: Category[] }>('/catalog.json').subscribe(data => {
       this.categories = data.categories;
       this.loaded = true;
       // Re-run scroll trigger after data loads
