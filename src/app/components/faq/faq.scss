@@ -1,0 +1,21 @@
+/* FAQ Section Styles */
+
+.faq-item {
+  button {
+    .material-symbols-outlined {
+      transform: rotate(0deg);
+    }
+  }
+
+  &.active {
+    border-color: rgba(255, 187, 0, 0.3);
+
+    button {
+      background: rgba(255, 255, 255, 0.05);
+
+      .material-symbols-outlined {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

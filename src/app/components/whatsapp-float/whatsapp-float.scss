@@ -1,0 +1,22 @@
+/* WhatsApp Float Button */
+
+.whatsapp-float {
+  animation: float 6s ease-in-out infinite;
+
+  @media (max-width: 640px) {
+    bottom: 80px;
+  }
+
+  &:hover {
+    animation: none;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
