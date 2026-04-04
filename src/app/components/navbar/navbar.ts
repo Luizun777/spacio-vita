@@ -17,7 +17,6 @@ export class NavbarComponent implements AfterViewInit {
   mobileOpen = signal<boolean>(false);
 
   sections = [
-    { id: 'nutricion', label: 'Nutrición' },
     { id: 'medicina',  label: 'Medicina'  },
     { id: 'spa',       label: 'Spa & Estética' },
     { id: 'precios',   label: 'Precios'   },
