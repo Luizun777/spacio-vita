@@ -53,7 +53,7 @@ export class ServicesShowcaseComponent {
     {
       id: 'masajes',
       name: 'Terapia de Masajes',
-      icon: 'hand_therapy',
+      icon: 'spa',
       description: 'Relajante, descontracturante, drenaje linfático',
       category: 'Bienestar',
       color: 'bg-green-50',

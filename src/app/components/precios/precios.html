@@ -17,37 +17,37 @@
     </div>
 
     <!-- Categories grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
       @for (category of categories; track category.name) {
-        <div class="precio-card group bg-[#160B0D] border border-white/5 overflow-hidden opacity-0
-                    hover:border-[#FFBB00]/30 transition-all duration-500 hover:shadow-xl hover:shadow-[#FFBB00]/5">
+        <div class="precio-card group bg-[#160B0D] border border-white/10 overflow-hidden opacity-0
+                    hover:border-[#FFBB00]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#FFBB00]/10 rounded-xl">
 
           <!-- Image with overlay -->
-          <div class="relative h-44 overflow-hidden">
+          <div class="relative h-56 overflow-hidden">
             <img [src]="category.image" [alt]="category.name"
                  class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105
                         transition-all duration-700">
             <div class="absolute inset-0 bg-gradient-to-t from-[#160B0D] via-[#160B0D]/30 to-transparent"></div>
             <!-- Icon + category name overlay -->
-            <div class="absolute bottom-4 left-5 flex items-center gap-3">
-              <span class="material-symbols-outlined text-[#FFBB00] text-2xl">{{ category.icon }}</span>
-              <h3 class="font-headline text-xl text-white font-bold">{{ category.name }}</h3>
+            <div class="absolute bottom-5 left-6 flex items-center gap-3">
+              <span class="material-symbols-outlined text-[#FFBB00] text-3xl">{{ category.icon }}</span>
+              <h3 class="font-headline text-2xl text-white font-bold">{{ category.name }}</h3>
             </div>
             <!-- Gold left border accent -->
             <div class="absolute top-0 left-0 w-0.5 h-full bg-[#FFBB00] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
 
           <!-- Description -->
-          <p class="text-white/40 text-xs px-5 py-3 border-b border-white/5 leading-relaxed">
+          <p class="text-white/60 text-sm px-6 py-4 border-b border-white/10 leading-relaxed">
             {{ category.description }}
           </p>
 
           <!-- Services list -->
-          <ul class="divide-y divide-white/5">
+          <ul class="divide-y divide-white/10">
             @for (service of category.services; track service.name) {
-              <li class="px-5 py-4 hover:bg-white/[0.02] transition-colors">
+              <li class="px-6 py-5 hover:bg-white/[0.05] transition-colors">
                 <div class="flex items-start justify-between gap-3 mb-1">
-                  <span class="text-white/80 text-sm leading-snug">{{ service.name }}</span>
+                  <span class="text-white/90 text-sm font-medium leading-snug">{{ service.name }}</span>
                   @if (service.promo) {
                     <span class="shrink-0 text-[10px] bg-[#FFBB00] text-[#0D0608] px-2 py-0.5 font-bold tracking-wide uppercase">
                       {{ service.promo }}
@@ -55,17 +55,17 @@
                   }
                 </div>
                 @if (service.description) {
-                  <p class="text-white/30 text-xs leading-relaxed mb-2">{{ service.description }}</p>
+                  <p class="text-white/50 text-xs leading-relaxed mb-2">{{ service.description }}</p>
                 }
-                <div class="flex items-center gap-3 mt-1.5">
+                <div class="flex items-center gap-3 mt-2">
                   @if (service.price) {
-                    <span class="text-[#FFBB00] font-bold text-base">${{ service.price }}</span>
+                    <span class="text-[#FFBB00] font-bold text-lg">${{ service.price }}</span>
                   }
                   @if (service.original_price) {
-                    <span class="text-white/25 text-xs line-through">${{ service.original_price }}</span>
+                    <span class="text-white/30 text-xs line-through">${{ service.original_price }}</span>
                   }
                   @if (!service.price) {
-                    <span class="text-white/30 text-xs italic">Consultar precio</span>
+                    <span class="text-white/40 text-xs italic">Consultar precio</span>
                   }
                 </div>
               </li>
