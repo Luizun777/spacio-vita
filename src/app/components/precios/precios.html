@@ -16,9 +16,22 @@
       </p>
     </div>
 
+    <!-- Loading state -->
+    @if (!loaded) {
+      <div class="flex items-center justify-center py-20">
+        <div class="text-center">
+          <div class="inline-block animate-spin mb-4">
+            <div class="w-12 h-12 border-4 border-[#FFBB00]/20 border-t-[#FFBB00] rounded-full"></div>
+          </div>
+          <p class="text-white/60">Cargando catálogo...</p>
+        </div>
+      </div>
+    }
+
     <!-- Categories grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-      @for (category of categories; track category.name; let i = $index) {
+    @if (loaded && categories.length > 0) {
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        @for (category of categories; track category.name; let i = $index) {
         <div class="precio-card group bg-[#160B0D] border border-white/10 overflow-hidden opacity-0
                     hover:border-[#FFBB00]/40 transition-all duration-500 hover:shadow-2xl hover:shadow-[#FFBB00]/15 rounded-2xl"
              [ngClass]="'animate-stagger-' + ((i % 6) + 1)">
@@ -74,8 +87,17 @@
           </div>
 
         </div>
-      }
-    </div>
+        }
+      </div>
+    }
+
+    <!-- Error state -->
+    @if (loaded && categories.length === 0) {
+      <div class="text-center py-20">
+        <p class="text-white/60 mb-4">No se pudo cargar el catálogo.</p>
+        <p class="text-white/40 text-sm">Por favor, intenta recargar la página.</p>
+      </div>
+    }
 
     <!-- CTA after catalog -->
     <div class="text-center mt-12 md:mt-16">

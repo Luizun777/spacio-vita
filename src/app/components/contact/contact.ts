@@ -161,8 +161,8 @@ export class ContactComponent implements AfterViewInit {
   }
 
   getWhatsappLink(): string {
-    // Número: 55 3576 0433 → formato internacional: +52 55 3576 0433
-    const phoneNumber = '5553576433';
+    // Número: +52 1 55 3576 0433
+    const phoneNumber = '525535760433';
     const message = encodeURIComponent('¡Hola! Me gustaría agendar una cita en Spacio Vita. ¿Cuál es la disponibilidad? 😊');
     return `https://wa.me/${phoneNumber}?text=${message}`;
   }

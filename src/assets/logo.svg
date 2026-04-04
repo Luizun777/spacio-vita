@@ -1,0 +1,53 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient definitions -->
+  <defs>
+    <linearGradient id="flowerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D8A8E8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A76FD8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Center circle -->
+  <circle cx="100" cy="100" r="12" fill="url(#flowerGradient)" stroke="#FFBB00" stroke-width="2"/>
+
+  <!-- Flower petals -->
+  <g stroke="url(#flowerGradient)" stroke-width="3" fill="none" stroke-linecap="round">
+    <!-- Top petal -->
+    <path d="M 100 100 Q 85 60 100 40" />
+    <!-- Top right -->
+    <path d="M 100 100 Q 120 65 140 50" />
+    <!-- Right -->
+    <path d="M 100 100 Q 140 85 160 100" />
+    <!-- Bottom right -->
+    <path d="M 100 100 Q 120 135 140 150" />
+    <!-- Bottom -->
+    <path d="M 100 100 Q 100 140 100 160" />
+    <!-- Bottom left -->
+    <path d="M 100 100 Q 80 135 60 150" />
+    <!-- Left -->
+    <path d="M 100 100 Q 60 85 40 100" />
+    <!-- Top left -->
+    <path d="M 100 100 Q 80 65 60 50" />
+  </g>
+
+  <!-- Petal circles at ends -->
+  <circle cx="100" cy="40" r="6" fill="#D8A8E8" stroke="#FFBB00" stroke-width="2"/>
+  <circle cx="140" cy="50" r="6" fill="#D8A8E8" stroke="#FFBB00" stroke-width="2"/>
+  <circle cx="160" cy="100" r="6" fill="#D8A8E8" stroke="#FFBB00" stroke-width="2"/>
+  <circle cx="140" cy="150" r="6" fill="#D8A8E8" stroke="#FFBB00" stroke-width="2"/>
+  <circle cx="100" cy="160" r="6" fill="#D8A8E8" stroke="#FFBB00" stroke-width="2"/>
+  <circle cx="60" cy="150" r="6" fill="#D8A8E8" stroke="#FFBB00" stroke-width="2"/>
+  <circle cx="40" cy="100" r="6" fill="#D8A8E8" stroke="#FFBB00" stroke-width="2"/>
+  <circle cx="60" cy="50" r="6" fill="#D8A8E8" stroke="#FFBB00" stroke-width="2"/>
+
+  <!-- Text: SPACIO VITA around the flower -->
+  <defs>
+    <path id="circlePath" d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" fill="none"/>
+  </defs>
+
+  <text font-family="Arial, sans-serif" font-size="14" font-weight="bold" letter-spacing="3" fill="#FFBB00">
+    <textPath href="#circlePath" startOffset="0%" text-anchor="start">
+      SPACIO VITA
+    </textPath>
+  </text>
+</svg>
