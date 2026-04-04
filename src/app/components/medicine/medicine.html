@@ -58,12 +58,12 @@
       <div class="medicine-image-wrap opacity-0 lg:w-[40%] flex flex-col gap-6">
 
         <!-- Stats row -->
-        <div class="grid grid-cols-3 gap-4 mb-2">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 1rem;" class="mb-2">
           @for (stat of stats; track stat.label) {
-            <div class="medicine-stat opacity-0 bg-[#160B0D] border border-white/5 p-5 text-center
-                        hover:border-[#FFBB00]/30 transition-colors duration-300">
-              <div class="font-headline text-3xl text-[#FFBB00] font-bold mb-1">{{ stat.value }}</div>
-              <div class="text-white/40 text-[10px] tracking-wide uppercase leading-tight">{{ stat.label }}</div>
+            <div class="medicine-stat opacity-0 bg-[#160B0D] border border-white/5 p-6 text-center
+                        hover:border-[#FFBB00]/30 transition-colors duration-300 min-h-[120px] flex flex-col justify-center">
+              <div class="font-headline text-3xl md:text-4xl text-[#FFBB00] font-bold mb-2">{{ stat.value }}</div>
+              <div class="text-white/40 text-[9px] md:text-[10px] tracking-wide uppercase leading-tight whitespace-normal">{{ stat.label }}</div>
             </div>
           }
         </div>
