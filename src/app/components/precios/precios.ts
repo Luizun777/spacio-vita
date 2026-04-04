@@ -1,10 +1,12 @@
-import { Component, OnInit, AfterViewInit, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
+
+// Import catalog data directly
+import catalogData from '../../../assets/catalog.json';
 
 export interface Service {
   name: string;
@@ -29,37 +31,22 @@ export interface Category {
   styleUrl: './precios.scss',
 })
 export class PreciosComponent implements OnInit, AfterViewInit {
-  private http = inject(HttpClient);
   categories: Category[] = [];
   loaded = false;
 
   ngOnInit(): void {
-    // Try loading from /catalog.json first
-    this.http.get<{ categories: Category[] }>('/catalog.json').subscribe({
-      next: (data) => {
-        console.log('✓ Catálogo cargado:', data.categories.length, 'categorías');
-        this.categories = data.categories;
-        this.loaded = true;
-        setTimeout(() => this.animateCards(), 100);
-      },
-      error: (err) => {
-        console.error('✗ Error cargando /catalog.json:', err);
-        console.log('Intentando ruta alternativa...');
-        // Try alternative path
-        this.http.get<{ categories: Category[] }>('catalog.json').subscribe({
-          next: (data) => {
-            console.log('✓ Catálogo cargado desde ruta alternativa:', data.categories.length, 'categorías');
-            this.categories = data.categories;
-            this.loaded = true;
-            setTimeout(() => this.animateCards(), 100);
-          },
-          error: (err2) => {
-            console.error('✗ Error en ruta alternativa:', err2);
-            this.loaded = true;
-          },
-        });
-      },
-    });
+    // Load catalog directly from imported JSON
+    try {
+      console.log('📦 Cargando catálogo desde JSON...');
+      this.categories = catalogData.categories;
+      this.loaded = true;
+      console.log('✓ Catálogo cargado:', this.categories.length, 'categorías');
+      console.log('Categorías:', this.categories.map(c => c.name));
+      setTimeout(() => this.animateCards(), 100);
+    } catch (err) {
+      console.error('✗ Error cargando catálogo:', err);
+      this.loaded = true;
+    }
   }
 
   ngAfterViewInit(): void {
